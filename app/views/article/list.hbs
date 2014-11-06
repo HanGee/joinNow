@@ -1,0 +1,30 @@
+<p><a href="/articles/new">new</a></p>
+
+
+<table style="width:80%" id="article-table" >
+    <tr>
+        <th>id</th>
+        <th>Title</th>
+        <th>text</th>
+        <th>Author</th>
+        <th>操作</th>
+    </tr>
+
+    {{#each articles}}
+        <tr>
+            <th>{{id}}</th>
+            <th>
+                <a href="/articles/{{id}}">{{title}}</a>
+            </th>
+            <th>{{content}}</th>
+            <th>
+                <a href="/users/{{User.id}}">{{User.username}}</a>
+            </th>
+            <th>
+                <a href="/articles/{{id}}/edit">Edit</a>
+                <a href="/articles/{{id}}/remove">Delete</a>
+            </th>
+        </tr>
+    {{/each}}
+
+</table>
