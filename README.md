@@ -4,8 +4,10 @@
 
 ###給熱血的新手攻城師教學 揪咪～
 
+####step1
 在Mysql上建立一個 database 名為 `node-joinNow-development`
 
+####step2
 接著建立一個mysql檔案至 ``config/mysql.js``
 
 	/**
@@ -28,6 +30,7 @@
 
 	var mysql = require('./mysql');
 
+####step3
 接著把 `app.js` 檔案內的 `//forceSync = true;` 打開
 
   	//forceSync = true;  ---->  forceSync = true;
@@ -37,5 +40,12 @@
 建立完資料以後就可以再度關起來
 
   	forceSync = true;  ---->  //forceSync = true;
-	
+
+####step4	
 [127.0.0.1:3000](127.0.0.1:3000) 快來試試看吧
+
+詳細功能內容咱們再討論吧！！
+
+###以下是Doc大師的聯絡方式
+
+[低卡](https://www.facebook.com/dca.hsu)
