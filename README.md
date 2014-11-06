@@ -17,10 +17,10 @@
 	@class mysql
 	*/
 	module.exports = {
-	    database: 'node-joinNow-development',
-	    database_test: 'node-joinNow-test',
-    	    username: 'xxx',	/* xxx為自己設定的帳號 */
-    	    password: 'xxx',	/* xxx為自己設定的密碼 */
+		database: 'node-joinNow-development',
+		database_test: 'node-joinNow-test',
+		username: 'xxx',	/* xxx為自己設定的帳號 */
+		password: 'xxx',	/* xxx為自己設定的密碼 */
 	}
 
 將 `config/config.js` 的帳號密碼換成
