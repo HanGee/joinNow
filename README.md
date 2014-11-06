@@ -50,6 +50,6 @@
 
 詳細功能內容咱們再討論吧！！
 
-###以下是Doc大師的聯絡方式
+###以下是Dca大師的聯絡方式
 
 [低卡](https://www.facebook.com/dca.hsu)
