@@ -6,7 +6,7 @@
 
 ####Setting
 
-	git clone https://github.com/webber0928/joinNow.git
+	git clone ......
 	npm install
 	brew install mysql
 
