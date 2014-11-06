@@ -2,7 +2,7 @@
 
 現在就加入完成這個 [HanGee 黑客松](http://hackathon.tw/) 報名系統的攻城計畫吧！！
 
-##給熱血的新手攻城師教學 揪咪～
+###給熱血的新手攻城師教學 揪咪～
 
 在Mysql上建立一個 database 名為 `node-joinNow-development`
 
@@ -20,7 +20,7 @@
 
 將 `config/config.js` 的帳號密碼換成
   
-  database: mysql.database,
+  	database: mysql.database,
 	username: mysql.username,
 	password: mysql.password,	
 
@@ -30,12 +30,12 @@
 
 接著把 `app.js` 檔案內的 `//forceSync = true;` 打開
 
-  //forceSync = true;  ---->  forceSync = true;
+  	//forceSync = true;  ---->  forceSync = true;
 
 接著執行 'node app.js'
 
 建立完資料以後就可以再度關起來
 
-  forceSync = true;  ---->  //forceSync = true;
+  	forceSync = true;  ---->  //forceSync = true;
 	
 [127.0.0.1:3000](127.0.0.1:3000) 快來試試看吧
