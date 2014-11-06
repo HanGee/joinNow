@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="http://localhost:35729/livereload.js"></script>
+</head>
+<body>
+
+<header>
+
+
+    <a href="/">Home</a>
+    <a href="/articles">Articles</a>
+
+    {{#if authenticated}}
+        歡迎回來：{{user.email}}
+        <a href="/logout">登出</a>
+    {{else}}
+        <a href="/signin">登入</a>
+        <a href="/signup">註冊</a>
+    {{/if}}
+
+    {{#if flashInfo}}
+        flashInfo: {{flashInfo}}
+    {{/if}}
+    {{#if flashError}}
+        flashError: {{flashError}}
+    {{/if}}
+
+</header>
+
+<div>
+	<h1>{{ title }}</h1>
+
+	{{{ body }}}
+</div>
+
+
+</body>
+</html>

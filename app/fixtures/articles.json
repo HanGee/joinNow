@@ -1,0 +1,10 @@
+[
+  {
+    "model": "Article",
+    "data": {
+      "title": "Hello world",
+      "content": "<h3>h3 test</h3>",
+      "UserId": 1
+    }
+  }
+]

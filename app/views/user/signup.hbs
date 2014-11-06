@@ -1,0 +1,20 @@
+<form action="" method="post">
+
+    {{#if errorMessage}}
+        註冊失敗 {{errorMessage}}.
+    {{/if}}
+
+    <label for="signup-email">Email</label>
+    <input type="text" id="signup-email" name="email" />
+
+
+    <label for="signup-password">Password</label>
+    <input type="password" id="signup-password" name="password" />
+
+
+    <label for="signup-password-confirmation">Password confirmation</label>
+    <input type="password" id="signup-password-confirmation" name="password_confirmation" />
+
+
+    <input type="submit"/>
+</form>

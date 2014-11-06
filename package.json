@@ -2,7 +2,7 @@
   "name": "joinNow",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,30 @@
   "bugs": {
     "url": "https://github.com/HanGee/joinNow/issues"
   },
-  "homepage": "https://github.com/HanGee/joinNow"
+  "homepage": "https://github.com/HanGee/joinNow",
+  "dependencies": {
+    "body-parser": "~1.9.2",
+    "compression": "~1.2.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.3.3",
+    "cookie-session": "^1.0.2",
+    "debug": "^2.1.0",
+    "express": "~4.10.1",
+    "express-handlebars": "^1.1.0",
+    "glob": "~4.0.6",
+    "lodash": "~2.4.1",
+    "method-override": "~2.3.0",
+    "morgan": "~1.4.1",
+    "mysql": "~2.5.2",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "~2.0.0-rc2",
+    "sequelize-fixtures": "^0.3.3",
+    "serve-favicon": "~2.1.6"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.10",
+    "gulp-nodemon": "~1.0.4",
+    "gulp-livereload": "~2.1.1"
+  }
 }
