@@ -4,6 +4,12 @@
 
 ---
 
+####Setting
+
+	git clone https://github.com/webber0928/joinNow.git
+	npm install
+	brew install mysql
+
 ####給熱血的新手攻城師教學 
 
 ####step1
@@ -46,7 +52,8 @@
   	forceSync = true;  ---->  //forceSync = true;
 
 ####step4	
-[127.0.0.1:3000](127.0.0.1:3000) 快來試試看吧
+
+[127.0.0.1:3000](http://127.0.0.1:3000) 快來試試看吧
 
 ---
 
