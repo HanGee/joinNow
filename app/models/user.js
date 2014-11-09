@@ -1,7 +1,7 @@
 // Example model
 
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
 
     var User = sequelize.define('User', {
         email: {
@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         },
     }, {
         classMethods: {
-            associate: function(models) {
+            associate: function (models) {
                 // associations can be defined here
 
             }

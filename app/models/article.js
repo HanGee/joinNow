@@ -1,7 +1,7 @@
 // Example model
 
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
 
     var Article = sequelize.define('Article', {
         title: {
@@ -24,12 +24,14 @@ module.exports = function(sequelize, DataTypes) {
 
         trashed: {
             type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
 
 
     }, {
         classMethods: {
-            associate: function(models) {
+            associate: function (models) {
 
                 //關聯作者
                 Article.belongsTo(models.User);

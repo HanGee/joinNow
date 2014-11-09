@@ -12,18 +12,17 @@ var exphbs  = require('express-handlebars');
 var passport = require('passport');
 var session = require('cookie-session');
 var flash = require('connect-flash');
+var swig = require('swig');
 
 module.exports = function(app, config) {
 
     debug('express init');
 
-	app.engine('hbs', exphbs.create({
-		extname: '.hbs',
-		defaultLayout: 'main.hbs',
-		layoutsDir: config.root + '/app/views/layouts/'
-	}).engine);
+    app.engine('swig', swig.renderFile);
+    app.set('view engine', 'swig');
     app.set('views', config.root + '/app/views');
-	app.set('view engine', 'hbs');
+    app.set('view cache', false);
+    swig.setDefaults({ cache: false });
 
     // app.use(favicon(config.root + '/public/img/favicon.ico'));
     app.use(logger('dev'));
