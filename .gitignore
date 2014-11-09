@@ -33,3 +33,5 @@ public/components
 .idea
 
 
+
+config/config.local.js
