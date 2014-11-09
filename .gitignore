@@ -32,6 +32,8 @@ public/components
 .sass-cache
 .idea
 
+# 自己的mysql帳號密碼
+mysql.js
 
 
 config/config.local.js
