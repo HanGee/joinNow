@@ -6,19 +6,39 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/components/trumbowyg/dist/ui/trumbowyg.min.css">
     <link rel="stylesheet" href="/components/trumbowyg/dist/plugins/colors/ui/trumbowyg.colors.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="http://localhost:35729/livereload.js"></script>
     {% block head %}{% endblock %}
-
 </head>
 <body>
 
-<header>
-    <a href="/">Home</a>
-    <a href="/articles">Articles</a>
-
-    {% include "./_partial/userPanel.swig" %}
-</header>
+<!-- START NAV -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="../" class="navbar-brand">Hangee Hackathon</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/articles">Articles</a>
+        </li>
+      </ul>
+      {% include "./_partial/userPanel.swig" %}
+    </div>
+  </div>
+</div>
+<!-- END NAV -->
+<BR><BR><BR><BR>
 
 <div>
     <h1>{{ title }}</h1>

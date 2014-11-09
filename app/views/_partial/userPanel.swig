@@ -1,10 +1,12 @@
+<ul class="nav navbar-nav navbar-right">
 
 {% if authenticated %}
-    歡迎回來：{{user.email}}
-    <a href="/logout">登出</a>
+	<li>
+    	歡迎回來：{{user.email}}<a href="/logout">登出</a>
+    </li>
 {% else %}
-    <a href="/signin">登入</a>
-    <a href="/signup">註冊</a>
+    <li><a href="/signin">登入</a></li>
+    <li><a href="/signup">註冊</a></li>
 {% endif %}
 
 
@@ -21,3 +23,4 @@
 		錯誤: {{ mseeage }}
 	</div>
 {% endfor %}
+</ul>
