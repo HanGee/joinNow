@@ -5,5 +5,9 @@
     "**/.*",
     "node_modules",
     "components"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "trumbowyg": "~1.1.7"
+  }
 }

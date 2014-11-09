@@ -22,7 +22,7 @@ module.exports = function (app, config) {
      */
     passport.deserializeUser(function (id, done) {
 
-        db.User.find(id).complete(function(err, user){
+        db.User.find(id).complete(function (err, user) {
             if (!user) {
                 return done(new Error('登入失敗'));
             }

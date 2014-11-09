@@ -11,7 +11,7 @@ module.exports = function (req, res, next) {
                 trashed: false
             }
         })
-        .then(function (article){
+        .then(function (article) {
             if (!article) {
                 throw new Error('CAN_NOT_FOUND');
             }
@@ -23,11 +23,11 @@ module.exports = function (req, res, next) {
                 trashed: true
             });
         })
-        .then(function (article){
+        .then(function (article) {
             req.flash('info', '刪除成功');
             res.redirect('/articles');
         })
-        .catch(function (err){
+        .catch(function (err) {
             console.log(err.message);
             console.log(err.stack);
 

@@ -1,3 +1,12 @@
+var db = require('../../models');
+
 module.exports = function (req, res, next) {
-    res.render('article/edit');
+
+    db.Article
+        .find(req.params.id)
+        .complete(function (err, article) {
+            res.render('article/edit', {
+                article: article
+            });
+        });
 };

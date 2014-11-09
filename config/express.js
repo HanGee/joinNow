@@ -8,13 +8,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
-var exphbs  = require('express-handlebars');
+var exphbs = require('express-handlebars');
 var passport = require('passport');
 var session = require('cookie-session');
 var flash = require('connect-flash');
 var swig = require('swig');
 
-module.exports = function(app, config) {
+module.exports = function (app, config) {
 
     debug('express init');
 
@@ -22,7 +22,7 @@ module.exports = function(app, config) {
     app.set('view engine', 'swig');
     app.set('views', config.root + '/app/views');
     app.set('view cache', false);
-    swig.setDefaults({ cache: false });
+    swig.setDefaults({cache: false});
 
     // app.use(favicon(config.root + '/public/img/favicon.ico'));
     app.use(logger('dev'));
@@ -46,29 +46,30 @@ module.exports = function(app, config) {
     require('../app/middlewares/passport')(app, config);
 
 
-    app.use(function(req, res, next){
+    app.use(function (req, res, next) {
 
         console.log('\n\n--------------------');
         console.log('req.url', req.url);
         console.log('req.query', req.query);
         console.log('req.body', req.body);
-        if (req.user) {
-            console.log('req.user', req.user.email);
-        }
+        console.log('req.user', req.user);
+
 
         res.locals.user = req.user;
-        res.locals.flashInfo = req.flash('info');
-        res.locals.flashError = req.flash('error');
+        res.locals.flashInfo = req.flash('info') || false;
+        res.locals.flashError = req.flash('error') || false;
         res.locals.authenticated = !!req.user;
 
+        if (req.user) {
+            res.locals.userId = req.user.id;
+        }
         next();
     });
 
     require('../app/express_router')(app, config);
 
 
-
-    app.use(function(req, res, next) {
+    app.use(function (req, res, next) {
         var err = new Error('Not Found');
         err.status = 404;
 
@@ -80,7 +81,7 @@ module.exports = function(app, config) {
     });
 
     if (app.get('env') === 'development') {
-        app.use(function(err, req, res) {
+        app.use(function (err, req, res) {
             res.status(err.status || 500);
             res.render('error', {
                 message: err.message,
@@ -90,7 +91,7 @@ module.exports = function(app, config) {
         });
     }
 
-    app.use(function(err, req, res) {
+    app.use(function (err, req, res) {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,

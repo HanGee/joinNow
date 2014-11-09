@@ -87,6 +87,9 @@ module.exports = function (app, config) {
     router.route('/articles/:id/remove')
         .get(Ctrl.article.actionRemove);
 
+    router.route('/articles/:id/edit')
+        .get(Ctrl.article.pageEdit)
+        .post(Ctrl.article.actionUpdate);
 
     app.use('/', router);
 };

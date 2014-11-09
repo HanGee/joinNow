@@ -7,18 +7,20 @@ module.exports = function (sequelize, DataTypes) {
         title: {
             type: DataTypes.STRING,
         },
+
         content: {
             type: DataTypes.TEXT,
         },
-        comments_count: {
+
+        commentsCount: {
             type: DataTypes.INTEGER,
         },
 
-        commented_at: {
+        commentedAt: {
             type: DataTypes.DATE
         },
 
-        first_image_url: {
+        firstImageUrl: {
             type: DataTypes.STRING,
         },
 
