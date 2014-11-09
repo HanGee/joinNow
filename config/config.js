@@ -1,6 +1,9 @@
 var path = require('path'),
+    _ = require('lodash'),
     rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'development';
+    env = process.env.NODE_ENV || 'development',
+    localConfig = require('./config.local');
+;
 
 var config = {
     development: {
@@ -64,4 +67,5 @@ var config = {
     }
 };
 
-module.exports = config[env];
+
+module.exports = _.merge(config[env], localConfig);

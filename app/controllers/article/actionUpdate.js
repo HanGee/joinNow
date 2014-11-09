@@ -1,6 +1,8 @@
+var _ = require('lodash');
 var db = require('../../models');
 
-module.exports = function(req, res, next){
+module.exports = function (req, res, next) {
+
     var data = _.pick(req.body, [
         'title',
         'content'
@@ -8,8 +10,10 @@ module.exports = function(req, res, next){
 
     db.Article
         .find(req.params.id)
-        .updateAttributes(data)
-        .complete(function(err, article){
-            res.redirect('/articles/' + article.id);
+        .then(function (article) {
+            return article.updateAttributes(data);
+        })
+        .then(function (article) {
+            return res.redirect('/articles/' + article.id);
         });
 };

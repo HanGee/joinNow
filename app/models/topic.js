@@ -1,7 +1,7 @@
 // Example model
 
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
 
     var Topic = sequelize.define('Topic', {
 
@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
 
     }, {
         classMethods: {
-            associate: function(models) {
+            associate: function (models) {
 
                 //關聯作者
                 Topic.belongsTo(models.User, {

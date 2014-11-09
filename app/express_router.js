@@ -2,15 +2,15 @@ var express = require('express');
 var glob = require('glob');
 var router = express.Router();
 
-module.exports = function(app, config) {
+module.exports = function (app, config) {
 
     var Ctrl = {};
 
     var controllers = glob.sync(config.root + '/app/controllers/**/*.js');
-    controllers.forEach(function(controller) {
+    controllers.forEach(function (controller) {
 
         var paths = controller.split(/\/|\./);
-        if (paths.pop()==='js') {
+        if (paths.pop() === 'js') {
             var method = paths.pop();
             var ctrlName = paths.pop();
             Ctrl[ctrlName] = Ctrl[ctrlName] || {};
@@ -18,11 +18,8 @@ module.exports = function(app, config) {
         }
         return;
     });
-    console.log('controller ok');
 
-    //var qqqq = glob.sync(config.root + '/app/controllers/**/*.js', {
-    //    cwd: __dirname
-    //});
+    console.log('controller ok');
 
 
     /*------------------------------------------
@@ -30,8 +27,8 @@ module.exports = function(app, config) {
      * Param 定義區塊
      *
      * ------------------------------------------ */
-    router.param('id', function(req, res, next, id){
-        if( /^\d+$/.test(id) ){
+    router.param('id', function (req, res, next, id) {
+        if (/^\d+$/.test(id)) {
             return next();
         }
         next(new Error('bad id'));
@@ -48,11 +45,11 @@ module.exports = function(app, config) {
 
 
     /*------------------------------------------
-    *
-    * Router 定義區塊
-    *
-    * TODO 我的密碼沒加密 QQQQQQQ
-    * ------------------------------------------ */
+     *
+     * Router 定義區塊
+     *
+     * TODO 我的密碼沒加密 QQQQQQQ
+     * ------------------------------------------ */
     router.route('/')
         .get(Ctrl.customPage.home);
 
@@ -87,9 +84,12 @@ module.exports = function(app, config) {
         .post(Ctrl.article.actionUpdate)
         .delete(Ctrl.article.actionRemove);
 
+    router.route('/articles/:id/remove')
+        .get(Ctrl.article.actionRemove);
 
-
-
+    router.route('/articles/:id/edit')
+        .get(Ctrl.article.pageEdit)
+        .post(Ctrl.article.actionUpdate);
 
     app.use('/', router);
 };
