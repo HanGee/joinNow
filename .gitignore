@@ -37,3 +37,4 @@ mysql.js
 
 
 config/config.local.js
+public/css

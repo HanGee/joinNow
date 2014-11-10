@@ -17,7 +17,7 @@
 		<li>
 		{{ comment.id }}
 		{{ comment.title }}
-		{{ comment.content }} 
+		{{ comment.content }}
 		{{ comment.UserId }}
 		</li>
 	{% endfor %}
