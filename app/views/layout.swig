@@ -40,7 +40,28 @@
 <!-- END NAV -->
 <BR><BR><BR><BR>
 
- <div class="container">
+
+
+{# 訊息顯示 #}
+{% for mseeage in flashInfo %}
+  <div>
+    提示: {{ mseeage }}
+  </div>
+{% endfor %}
+
+{# 錯誤顯示 #}
+{% for mseeage in flashError %}
+  <div>
+    錯誤: {{ mseeage }}
+  </div>
+{% endfor %}
+
+
+
+
+
+
+<div class="container">
     <!-- <h1>{{ title }}</h1> -->
 
     {% block content %}{% endblock %}

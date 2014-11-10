@@ -12,7 +12,7 @@ require('./config/express')(app, config);
 var forceSync = false;
 var syncOption = {};
 
-//forceSync = true;
+// forceSync = true;
 
 if (forceSync){
     syncOption.force = true;
