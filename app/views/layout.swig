@@ -40,8 +40,8 @@
 <!-- END NAV -->
 <BR><BR><BR><BR>
 
-<div>
-    <h1>{{ title }}</h1>
+ <div class="container">
+    <!-- <h1>{{ title }}</h1> -->
 
     {% block content %}{% endblock %}
 </div>
