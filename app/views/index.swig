@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="row">
-  <div class="col-lg-10" col-md-offset-5">
+  <div class="col-lg-10 col-lg-offset-1">
     <div class="bs-component">
       <div class="jumbotron">
         <h1>11/22、11/23 兩天一夜

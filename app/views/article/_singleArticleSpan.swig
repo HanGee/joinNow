@@ -7,8 +7,8 @@
 	        <div>Author: <a href="/users/{{ article.User.id }}">{{ article.User.email }}</a></div>
 	        <div>
 	            {% if userId === article.User.id %}
-	                <a href="/articles/{{ article.User.id }}/edit">Edit</a>
-	                <a href="/articles/{{ article.User.id }}/remove">Delete</a>
+	                <a href="/articles/{{ article.id }}/edit">Edit</a>
+	                <a href="/articles/{{ article.id }}/remove">Delete</a>
 	            {% endif %}
 	        </div>
 	    </div>
