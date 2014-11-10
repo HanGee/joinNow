@@ -2,6 +2,11 @@
 {% import './_singleArticleSpan.swig' as _singleArticleSpan %}
 
 {% block content %}
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">Articles</li>
+</ol>
+
     <p><a href="/articles/new">new</a></p>
 
     <ul>
