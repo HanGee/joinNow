@@ -1,9 +1,6 @@
 var path = require('path'),
-    _ = require('lodash'),
     rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'development',
-    localConfig = require('./config.local');
-;
+    env = process.env.NODE_ENV || 'development';
 
 var config = {
     development: {
@@ -13,8 +10,8 @@ var config = {
         },
         port: 3000,
         database: 'node-joinNow-development',
-        username: 'node_joinNow',
-        password: 'pass_joinNow',
+        username: 'root',
+        password: 'root',
         dbconfig: {
             dialect: 'mysql',
             host: 'localhost',
@@ -67,5 +64,4 @@ var config = {
     }
 };
 
-
-module.exports = _.merge(config[env], localConfig);
+module.exports = config[env];
