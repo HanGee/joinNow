@@ -10,17 +10,4 @@
 {% endif %}
 
 
-{# 訊息顯示 #}
-{% for mseeage in flashInfo %}
-	<div>
-		提示: {{ mseeage }}
-	</div>
-{% endfor %}
-
-{# 錯誤顯示 #}
-{% for mseeage in flashError %}
-	<div>
-		錯誤: {{ mseeage }}
-	</div>
-{% endfor %}
 </ul>
