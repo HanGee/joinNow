@@ -12,5 +12,16 @@
 
 	<div><a href="/article">Back to Articles</a></div>
 
+	<ul>
+	{% for comment in article.Comments %}
+		<li>
+		{{ comment.id }}
+		{{ comment.title }}
+		{{ comment.content }} 
+		{{ comment.UserId }}
+		</li>
+	{% endfor %}
+	</ul>
+
 {% endblock %}
 

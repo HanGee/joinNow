@@ -3,25 +3,13 @@
 
 module.exports = function (sequelize, DataTypes) {
 
-    var Article = sequelize.define('Article', {
+    var Comment = sequelize.define('Comment', {
         title: {
             type: DataTypes.STRING
         },
 
         content: {
             type: DataTypes.TEXT,
-        },
-
-        commentsCount: {
-            type: DataTypes.INTEGER
-        },
-
-        commentedAt: {
-            type: DataTypes.DATE
-        },
-
-        firstImageUrl: {
-            type: DataTypes.STRING
         },
 
         trashed: {
@@ -36,12 +24,12 @@ module.exports = function (sequelize, DataTypes) {
             associate: function (models) {
 
                 //關聯作者
-                Article.belongsTo(models.User);
-                Article.hasMany(models.Comment);
+                Comment.belongsTo(models.Article);
+                Comment.belongsTo(models.User);
 
             }
         }
     });
 
-    return Article;
+    return Comment;
 };
