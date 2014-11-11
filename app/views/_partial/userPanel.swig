@@ -2,7 +2,7 @@
 
 {% if authenticated %}
 	<li>
-    	歡迎回來：{{user.email}}<a href="/logout">登出</a>
+    	<p style="margin-top: 10px;">歡迎回來：{{user.email}}<a href="/logout">&nbsp;(登出)</a></p>
     </li>
 {% else %}
     <li><a href="/signin">登入</a></li>
