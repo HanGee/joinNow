@@ -25,14 +25,19 @@
       </button>
     </div>
     <div class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/articles">Articles</a>
-        </li>
-      </ul>
+
+    {% if authenticated %}
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/articles">Articles</a>
+      </li>
+    </ul>
+    {% else %}
+    {% endif %}
+
       {% include "./_partial/userPanel.swig" %}
     </div>
   </div>
@@ -44,16 +49,28 @@
 
 {# 訊息顯示 #}
 {% for mseeage in flashInfo %}
-  <div>
-    提示: {{ mseeage }}
+<div class="container">
+  <div class="bs-component">
+    <div class="alert alert-dismissable alert-warning">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4>提示</h4>
+      <p>{{ mseeage }}</p>
+    </div>
   </div>
+</div>
 {% endfor %}
 
 {# 錯誤顯示 #}
 {% for mseeage in flashError %}
-  <div>
-    錯誤: {{ mseeage }}
+<div class="container">
+  <div class="bs-component">
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4>錯誤</h4>
+      <p>{{ mseeage }}</p>
+    </div>
   </div>
+</div>
 {% endfor %}
 
 
