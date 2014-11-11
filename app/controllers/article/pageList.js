@@ -8,6 +8,7 @@ module.exports = function (req, res, next) {
         },
         include: [db.User]
     }).complete(function (err, articles) {
+        console.log(articles);
         res.render('article/list', {
             articles: articles
         });

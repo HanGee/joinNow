@@ -7,11 +7,23 @@
     <li class="active">Articles</li>
 </ol>
 
-    <p><a href="/articles/new">new</a></p>
 
-    <ul>
-        {% for article in articles %}
-            {{ _singleArticleSpan.render(article) }}
-        {% endfor %}
-    </ul>
+<p><a href="/articles/new" class="btn btn-primary">new</a></p>
+
+<table class="table">
+	<thead>
+		<tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Author</th>
+            <th>Function</th>
+		</tr>
+    </thead>
+    <tbody>
+    {% for article in articles %}
+        {{ _singleArticleSpan.render(article) }}
+    {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
