@@ -26,7 +26,6 @@
     </div>
     <div class="navbar-collapse collapse" id="navbar-main">
 
-    {% if authenticated %}
     <ul class="nav navbar-nav">
       <li>
         <a href="/">Home</a>
@@ -35,6 +34,8 @@
         <a href="/articles">Articles</a>
       </li>
     </ul>
+
+    {% if authenticated %}
     {% else %}
     {% endif %}
 
