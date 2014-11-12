@@ -7,10 +7,10 @@
             </td>
             <td>{{ article.content }}</td>
             <td>
-            	<a href="/users/{{ article.User.id }}">{{ article.User.email }}</a>
+            	<a href="/users/{{ article.author.id }}">{{ article.author.email }}</a>
             </td>
             <td>
-	            {% if userId === article.User.id %}
+	            {% if userId && userId === article.author.id %}
 	                <a href="/articles/{{ article.id }}/edit">Edit</a>
 	                <a href="/articles/{{ article.id }}/remove">Delete</a>
 	            {% endif %}

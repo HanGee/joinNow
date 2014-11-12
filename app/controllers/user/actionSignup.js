@@ -14,13 +14,15 @@ module.exports = function (req, res, next) {
         'password'
     ]);
 
-    db.User.create(data).complete(function (err, user) {
-        if (err) {
-            console.log('error', err);
-            req.flash('error', err);
-            res.redirect('/signup');
-            return;
-        }
-        res.redirect('/me');
-    });
+    return db.User
+        .create(data, function(err, doc){
+            if (err) {
+                console.log('error', err);
+                req.flash('error', err);
+                res.redirect('/signup');
+                return;
+            }
+            res.redirect('/me');
+        });
+
 };

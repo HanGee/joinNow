@@ -16,12 +16,18 @@ module.exports = function (req, res, next) {
         'content'
     ]);
 
-    data.UserId = req.user.id;
     data.content = sanitizer.sanitize(data.content);
+    data.author = req.user._id;
 
-    db.Article
+    return db.Article
         .create(data)
-        .complete(function (err, article) {
-            res.redirect('/articles/' + article.id);
+        .then(function (doc){
+            res.redirect('/articles/' + doc._id);
+
+        }, function (err){
+            console.log(err);
+            return next(err);
         });
+
+
 };

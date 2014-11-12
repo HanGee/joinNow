@@ -14,21 +14,19 @@ module.exports = function (app, config) {
         debug('嘗試登入 %s', password);
         console.log('LocalStrategy', email, password);
 
-        db.User.find({
-            where: {
-                email: email,
-                password: password
-            }
-        }).complete(function (err, user) {
-            if (err) {
-                return done(null, false, {message: '登入失敗.'});
-            }
-            if (!user) {
-                return done(null, false, {message: '請確認信箱和密碼正確.'});
-            }
-            done(null, user);
-        });
-
+        return db.User
+            .findOne()
+            .where('email', email)
+            .where('password', password)
+            .exec(function(err, user){
+                if (err) {
+                    return done(null, false, {message: '登入失敗.'});
+                }
+                if (!user) {
+                    return done(null, false, {message: '請確認信箱和密碼正確.'});
+                }
+                done(null, user);
+            });
     }));
 
 };

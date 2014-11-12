@@ -19,7 +19,7 @@ module.exports = function (app, config) {
         return;
     });
 
-    console.log('controller ok');
+    console.log('controller 自動讀取 ok');
 
 
     /*------------------------------------------
@@ -27,12 +27,12 @@ module.exports = function (app, config) {
      * Param 定義區塊
      *
      * ------------------------------------------ */
-    router.param('id', function (req, res, next, id) {
-        if (/^\d+$/.test(id)) {
-            return next();
-        }
-        next(new Error('bad id'));
-    });
+    //router.param('id', function (req, res, next, id) {
+    //    if (/^\d+$/.test(id)) {
+    //        return next();
+    //    }
+    //    next(new Error('bad id'));
+    //});
 
     function ensureAuthenticated(req, res, next) {
         if (req.isAuthenticated()) {
@@ -83,6 +83,12 @@ module.exports = function (app, config) {
         .get(Ctrl.article.pageShow)
         .post(Ctrl.article.actionUpdate)
         .delete(Ctrl.article.actionRemove);
+
+    router.route('/articles/:id/join')
+        .get(Ctrl.article.pageJoin);
+
+    router.route('/articles/:id/unjoin')
+        .get(Ctrl.article.pageUnJoin);
 
     router.route('/articles/:id/remove')
         .get(Ctrl.article.actionRemove);

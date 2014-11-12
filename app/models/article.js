@@ -24,6 +24,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING
         },
 
+        authorId: {
+            type: DataTypes.INTEGER
+        },
+
         trashed: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
@@ -36,8 +40,23 @@ module.exports = function (sequelize, DataTypes) {
             associate: function (models) {
 
                 //關聯作者
-                Article.belongsTo(models.User);
-                Article.hasMany(models.Comment);
+
+
+
+
+                Article.hasMany(models.User, {as: 'Members'});
+                Article.hasOne(models.User, {as: 'Author', foreignKey: 'AuthorId'});
+
+                //Article.hasOne(models.User, {
+                //    as: 'Author'
+                //});
+
+
+                //Article.hasOne(models.User);
+                //Article.belongsTo(models.User, {
+                //    as: 'Author',
+                //    through: 'worker_tasks'
+                //});
 
             }
         }

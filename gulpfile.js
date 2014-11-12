@@ -11,7 +11,6 @@ var livereload = require('tiny-lr')();
 function notifyLiveReload(event) {
     var fileName = require('path').relative(__dirname, event.path);
 
-    console.log('debug---', fileName);
     livereload.changed({
         body: {
             files: [fileName]
@@ -22,7 +21,7 @@ function notifyLiveReload(event) {
 gulp.task('develop', function() {
     livereload.listen(35729);
     nodemon({
-        script: 'app.js',
+        script: 'app2.js',
         ext: 'js ejs',
     }).on('restart', function() {
         setTimeout(function() {

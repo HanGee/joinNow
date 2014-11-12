@@ -2,11 +2,22 @@ var db = require('../../models');
 
 module.exports = function (req, res, next) {
 
+
     db.Article
-        .find(req.params.id)
-        .complete(function (err, article) {
+        .findById(req.params.id)
+        .populate('author member')
+        .exec(function (err, doc) {
+
+            if (err){
+                return next(err);
+            }
+            if (!doc){
+                return res.status(404).send('404');
+            }
+
             res.render('article/edit', {
-                article: article
+                article: doc
             });
         });
+
 };
