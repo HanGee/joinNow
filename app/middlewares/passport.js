@@ -26,7 +26,7 @@ module.exports = function (app, config) {
             if (!user) {
                 return done(new Error('登入失敗'));
             }
-            return done(null, user.values);
+            return done(null, user);
         });
     });
 

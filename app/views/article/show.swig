@@ -6,12 +6,30 @@
 	    <div>id: {{article.id}} </div>
 	    <div>title: {{article.title}}</div>
 	    <div>content: {{article.content}}</div>
-	    <div>author: {{article.author.email}}</div>
 
 	</div>
 
 	<div><a href="/articles">Back to Articles</a></div>
 
+  <h3>發起人</h3>
+    {{ article.author.email }}
+
+  <h3>參加者</h3>
+  <ul>
+  {% for member in article.members %}
+    <li>
+    {{ member.id }}
+    {{ member.email }}
+    </li>
+  {% endfor %}
+  </ul>
+
+  <a class="btn btn-primary" href="/articles/{{article.id}}/join">
+    立刻參加
+  </a>
+  <a class="btn btn-default" href="/articles/{{article.id}}/unjoin">
+    取消參加
+  </a>
 {#
 
 	<h3>Comments</h3>

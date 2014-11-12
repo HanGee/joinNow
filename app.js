@@ -14,7 +14,7 @@ require('./config/express')(app, config);
 var forceSync = false;
 var syncOption = {};
 
-//forceSync = true;
+forceSync = true;
 
 if (forceSync){
     syncOption.force = true;
@@ -32,6 +32,7 @@ db.sequelize
                 console.log('資料重建');
                 sequelize_fixtures.loadFile('app/fixtures/*.json', db, function(){
                     console.log('sequelize fixtures done');
+
                 });
             }
 

@@ -16,12 +16,23 @@ module.exports = function (req, res, next) {
         'content'
     ]);
 
-    data.UserId = req.user.id;
     data.content = sanitizer.sanitize(data.content);
 
     db.Article
         .create(data)
-        .complete(function (err, article) {
-            res.redirect('/articles/' + article.id);
+        .then(function (article) {
+
+            article.setAuthor(req.user).on('success', function() {
+                article.getAuthor().on('success', function(author) {
+                    console.log('author', author.email);
+                    console.log('Author: ', article.Author);
+                })
+            });
+
+            console.log('article', article);
+            res.redirect('/articles');
+        })
+        .catch(function(err){
+            res.send(err);
         });
 };

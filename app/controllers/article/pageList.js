@@ -8,7 +8,8 @@ module.exports = function (req, res, next) {
         },
         include: [{
             model: db.User,
-            as: 'author',
+            as: 'Author',
+            //foreignKey: 'AuthorId',
             attributes: ['id', 'email']
         }]
     }).complete(function (err, articles) {

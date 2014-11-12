@@ -84,6 +84,12 @@ module.exports = function (app, config) {
         .post(Ctrl.article.actionUpdate)
         .delete(Ctrl.article.actionRemove);
 
+    router.route('/articles/:id/join')
+        .get(Ctrl.article.pageJoin);
+
+    router.route('/articles/:id/unjoin')
+        .get(Ctrl.article.pageUnJoin);
+
     router.route('/articles/:id/remove')
         .get(Ctrl.article.actionRemove);
 
