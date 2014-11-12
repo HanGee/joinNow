@@ -3,12 +3,25 @@ var db = require('../../models');
 
 module.exports = function (req, res, next) {
 
+    var conditions = { _id: req.params.id };
+
     db.Article
-        .find(req.params.id)
-        .then(function (article) {
-            return article.removeMembers(req.user);
+        .findOneAndUpdate(conditions, {
+            $pull: {
+                member: req.user._id
+            }
         })
-        .then(function (article) {
-            return res.redirect('/articles/' + article.id);
+        .exec(function (err, doc) {
+
+            if (err) {
+                console.log(err.message);
+                console.log(err.stack);
+
+                req.flash('error', '更新失敗');
+                res.redirect('/articles' + req.params.id);
+                return;
+            }
+            req.flash('info', '更新成功');
+            res.redirect('/articles/' + doc._id);
         });
 };

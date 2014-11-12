@@ -27,12 +27,12 @@ module.exports = function (app, config) {
      * Param 定義區塊
      *
      * ------------------------------------------ */
-    router.param('id', function (req, res, next, id) {
-        if (/^\d+$/.test(id)) {
-            return next();
-        }
-        next(new Error('bad id'));
-    });
+    //router.param('id', function (req, res, next, id) {
+    //    if (/^\d+$/.test(id)) {
+    //        return next();
+    //    }
+    //    next(new Error('bad id'));
+    //});
 
     function ensureAuthenticated(req, res, next) {
         if (req.isAuthenticated()) {

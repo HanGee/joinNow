@@ -21,6 +21,7 @@ var config = {
         database: 'node-joinNow-development',
         username: 'node_joinNow',
         password: 'pass_joinNow',
+        db: 'mongodb://localhost/node_joinNow_development',
         dbconfig: {
             dialect: 'mysql',
             host: 'localhost',
@@ -41,6 +42,7 @@ var config = {
         database: 'node-joinNow-test',
         username: 'node_joinNow',
         password: 'pass_joinNow',
+        db: 'mongodb://localhost/node_joinNow_test',
         dbconfig: {
             dialect: 'mysql',
             host: 'localhost',
@@ -58,9 +60,10 @@ var config = {
             name: 'joinNow'
         },
         port: 3000,
-        database: 'node-joinNow-test',
+        database: 'node-joinNow-production',
         username: 'node_joinNow',
         password: 'pass_joinNow',
+        db: 'mongodb://localhost/node_joinNow_production',
         dbconfig: {
             dialect: 'mysql',
             host: 'localhost',

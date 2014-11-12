@@ -17,22 +17,17 @@ module.exports = function (req, res, next) {
     ]);
 
     data.content = sanitizer.sanitize(data.content);
+    data.author = req.user._id;
 
-    db.Article
+    return db.Article
         .create(data)
-        .then(function (article) {
+        .then(function (doc){
+            res.redirect('/articles/' + doc._id);
 
-            article.setAuthor(req.user).on('success', function() {
-                article.getAuthor().on('success', function(author) {
-                    console.log('author', author.email);
-                    console.log('Author: ', article.Author);
-                })
-            });
-
-            console.log('article', article);
-            res.redirect('/articles');
-        })
-        .catch(function(err){
-            res.send(err);
+        }, function (err){
+            console.log(err);
+            return next(err);
         });
+
+
 };
