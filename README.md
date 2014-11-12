@@ -1,4 +1,5 @@
 #JoinNow
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/HanGee/joinNow?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 現在就加入完成這個 [HanGee 黑客松](http://hackathon.tw/) 報名系統的攻城計畫吧！！
 
