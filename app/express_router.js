@@ -19,7 +19,7 @@ module.exports = function (app, config) {
         return;
     });
 
-    console.log('controller ok');
+    console.log('controller 自動讀取 ok');
 
 
     /*------------------------------------------

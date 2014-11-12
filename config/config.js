@@ -3,7 +3,13 @@ var path = require('path'),
     rootPath = path.normalize(__dirname + '/..'),
     env = process.env.NODE_ENV || 'development',
     localConfig = require('./config.local');
-;
+
+var debug = require('debug')('joinNow:config');
+var debugDB = require('debug')('joinNow:db:query');
+
+function customDbLogger(){
+    return debugDB.apply(null, arguments);
+}
 
 var config = {
     development: {
@@ -22,7 +28,7 @@ var config = {
                 charset: 'utf8',
                 collate: 'utf8_general_ci'
             },
-            logging: console.log
+            logging: customDbLogger
         }
     },
 

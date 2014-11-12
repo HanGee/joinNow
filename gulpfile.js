@@ -11,7 +11,6 @@ var livereload = require('tiny-lr')();
 function notifyLiveReload(event) {
     var fileName = require('path').relative(__dirname, event.path);
 
-    console.log('debug---', fileName);
     livereload.changed({
         body: {
             files: [fileName]

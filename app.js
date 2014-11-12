@@ -1,3 +1,5 @@
+console.log('\n---------------\n程式重新啟動中...\n---------------\n');
+
 var express = require('express'),
     config = require('./config/config'),
     db = require('./app/models');
@@ -12,7 +14,7 @@ require('./config/express')(app, config);
 var forceSync = false;
 var syncOption = {};
 
-// forceSync = true;
+//forceSync = true;
 
 if (forceSync){
     syncOption.force = true;
@@ -34,7 +36,9 @@ db.sequelize
             }
 
             app.listen(config.port, function(err, message){
-                console.log('伺服器啟動完成', err, message);
+                console.log('伺服器啟動完成');
+                err && console.log('err', err);
+                message && console.log('message', message);
             });
         }
     });
