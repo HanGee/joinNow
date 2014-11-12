@@ -8,12 +8,13 @@ module.exports = function (req, res, next) {
             where: {id: req.params.id},
             include: [{
                 model: db.User,
+                as: 'author',
                 attributes: ['id', 'email']
-            }, db.Comment
-            ]
+            }]
         })
         .complete(function (err, article) {
-            console.log(JSON.stringify(article));
+            console.log('err', err);
+            console.log('article', article.values);
 
             article.content = xss(article.content);
 

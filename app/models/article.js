@@ -36,8 +36,14 @@ module.exports = function (sequelize, DataTypes) {
             associate: function (models) {
 
                 //關聯作者
-                Article.belongsTo(models.User);
-                Article.hasMany(models.Comment);
+                Article.belongsTo(models.User, {
+                    as: 'author'
+                });
+
+                Article.hasMany(models.User, {
+                    as: 'member',
+                    constraints: false
+                });
 
             }
         }

@@ -6,9 +6,15 @@ module.exports = function (req, res, next) {
         where: {
             trashed: false
         },
-        include: [db.User]
+        include: [{
+            model: db.User,
+            as: 'author',
+            attributes: ['id', 'email']
+        }]
     }).complete(function (err, articles) {
+
         console.log(articles);
+
         res.render('article/list', {
             articles: articles
         });
