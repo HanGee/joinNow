@@ -16,7 +16,7 @@ connection.on('error', function () {
     throw new Error('unable to connect to database at ' + config.db);
 });
 
-var models = glob.sync(config.root + '/app/models2/*.js');
+var models = glob.sync(config.root + '/app/models/*.js');
 
 models.forEach(function (model) {
     var modelObject = require(model);
