@@ -6,13 +6,16 @@ var mongoose = require('mongoose'),
 var UserSchema = new Schema({
 
     name: {
-        type: String
+        type: String,
     },
 
     email: {
         type: String,
         unique: true,
-        required: true
+        required: true,
+        set: function toLower (str) {
+            return str.toLowerCase();
+        }
     },
 
     password: {

@@ -1,4 +1,7 @@
 var _ = require('lodash');
+var crypto = require('crypto');
+
+var config = require('../../../config/config');
 var db = require('../../models');
 
 module.exports = function (req, res, next) {
@@ -14,6 +17,8 @@ module.exports = function (req, res, next) {
         'email',
         'password'
     ]);
+
+    data.password = crypto.createHash('sha1').update(data.password + config.hashScrect.pwd).digest('hex');
 
     return db.User
         .create(data, function(err, doc){

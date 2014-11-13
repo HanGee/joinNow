@@ -23,13 +23,10 @@ var config = {
         password: 'pass_joinNow',
         db: 'mongodb://localhost/node_joinNow_development',
         dbconfig: {
-            dialect: 'mysql',
-            host: 'localhost',
-            define: {
-                charset: 'utf8',
-                collate: 'utf8_general_ci'
-            },
-            logging: customDbLogger
+            db: 'mongodb://localhost/node_joinNow_development',
+        },
+        hashScrect: {
+            pwd: ''
         }
     },
 
@@ -44,13 +41,10 @@ var config = {
         password: 'pass_joinNow',
         db: 'mongodb://localhost/node_joinNow_test',
         dbconfig: {
-            dialect: 'mysql',
-            host: 'localhost',
-            define: {
-                charset: 'utf8',
-                collate: 'utf8_general_ci'
-            },
-            logging: console.log
+            db: 'mongodb://localhost/node_joinNow_test',
+        },
+        hashScrect: {
+            pwd: ''
         }
     },
 
@@ -65,13 +59,10 @@ var config = {
         password: 'pass_joinNow',
         db: 'mongodb://localhost/node_joinNow_production',
         dbconfig: {
-            dialect: 'mysql',
-            host: 'localhost',
-            define: {
-                charset: 'utf8',
-                collate: 'utf8_general_ci'
-            },
-            logging: false
+            db: 'mongodb://localhost/node_joinNow_production',
+        },
+        hashScrect: {
+            pwd: ''
         }
     }
 };
