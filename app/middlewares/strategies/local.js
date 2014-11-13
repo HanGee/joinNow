@@ -16,6 +16,7 @@ module.exports = function (app, config) {
         debug('嘗試登入 %s', password);
         console.log('LocalStrategy', email, password);
 
+        email = email.trim().toLowerCase();
         password = crypto.createHash('sha1').update(password + config.hashScrect.pwd).digest('hex');
 
         return db.User

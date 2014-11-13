@@ -14,7 +14,7 @@ var UserSchema = new Schema({
         unique: true,
         required: true,
         set: function toLower (str) {
-            return str.toLowerCase();
+            return str.trim().toLowerCase();
         }
     },
 
@@ -23,6 +23,10 @@ var UserSchema = new Schema({
         get: function(){
             return 'IS_HIDDEN';
         }
+    },
+
+    gravatarHash: {
+        type: String,
     },
 
     createdAt: {

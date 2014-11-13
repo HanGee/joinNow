@@ -18,7 +18,9 @@ module.exports = function (req, res, next) {
         'password'
     ]);
 
+    data.email = data.email.trim().toLowerCase();
     data.password = crypto.createHash('sha1').update(data.password + config.hashScrect.pwd).digest('hex');
+    data.gravatarHash = crypto.createHash('md5').update(data.email).digest('hex');
 
     return db.User
         .create(data, function(err, doc){

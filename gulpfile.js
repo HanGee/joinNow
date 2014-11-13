@@ -32,7 +32,8 @@ gulp.task('develop', function() {
 gulp.task('styles', function() {
     return gulp.src('src/sass/*.scss')
         .pipe(sass({
-            style: 'expanded'
+            style: 'expanded',
+            compass: true
         }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
         .pipe(gulp.dest('public/css'))

@@ -4,19 +4,23 @@
 
 	<p>
 	    <h1>{{article.title}}</h1>
-	    <div>content: {{article.content}}</div>
+      <hr>
+	    <div>{{article.content}}</div>
 
 	</p>
 
-	<p><a href="/articles">Back to Articles</a></p>
+	<p><a href="/articles">回到列表</a></p>
 
   <h3>發起人</h3>
+    <img class="gravatar" src="http://www.gravatar.com/avatar/{{ article.author.gravatarHash }}?s=70" />
+
     {{ article.author.name }}
 
   <h3>參加者</h3>
   <ul>
   {% for member in article.members %}
     <li>
+      <img src="http://www.gravatar.com/avatar/{{ member.gravatarHash }}?s=50" />
       <a href="/users/{{ member.id }}">{{ member.name }}</a>
     </li>
   {% endfor %}
