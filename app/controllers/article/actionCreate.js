@@ -25,8 +25,9 @@ module.exports = function (req, res, next) {
             res.redirect('/articles/' + doc._id);
 
         }, function (err){
-            console.log(err);
-            return next(err);
+            req.flash('error', '建立失敗');
+            res.redirect('/articles');
+            return;
         });
 
 
