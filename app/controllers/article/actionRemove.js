@@ -9,7 +9,7 @@ module.exports = function (req, res, next) {
         .findById(req.params.id)
         .exec(function (err, article) {
             if (article.author !== userId) {
-                throw new Error('YOU_CAN_NOT_DELETE');
+                return next(new Error('YOU_CAN_NOT_DELETE'));
             }
 
             article.trashed= true;
