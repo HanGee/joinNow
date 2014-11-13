@@ -75,7 +75,7 @@ module.exports = function (app, config) {
         .post(Ctrl.article.actionCreate);
 
     router.route('/articles/new')
-        .get(Ctrl.article.pageNew)
+        .get(ensureAuthenticated, Ctrl.article.pageNew)
         .post(ensureAuthenticated, Ctrl.article.actionCreate);
 
     router.route('/articles/edit')
@@ -83,21 +83,21 @@ module.exports = function (app, config) {
 
     router.route('/articles/:id')
         .get(Ctrl.article.pageShow)
-        .post(Ctrl.article.actionUpdate)
-        .delete(Ctrl.article.actionRemove);
+        .post(ensureAuthenticated, Ctrl.article.actionUpdate)
+        .delete(ensureAuthenticated, Ctrl.article.actionRemove);
 
     router.route('/articles/:id/join')
-        .get(Ctrl.article.pageJoin);
+        .get(ensureAuthenticated, Ctrl.article.pageJoin);
 
     router.route('/articles/:id/unjoin')
-        .get(Ctrl.article.pageUnJoin);
+        .get(ensureAuthenticated, Ctrl.article.pageUnJoin);
 
     router.route('/articles/:id/remove')
-        .get(Ctrl.article.actionRemove);
+        .get(ensureAuthenticated, Ctrl.article.actionRemove);
 
     router.route('/articles/:id/edit')
-        .get(Ctrl.article.pageEdit)
-        .post(Ctrl.article.actionUpdate);
+        .get(ensureAuthenticated, Ctrl.article.pageEdit)
+        .post(ensureAuthenticated, Ctrl.article.actionUpdate);
 
     app.use('/', router);
 };

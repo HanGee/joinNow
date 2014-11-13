@@ -15,12 +15,9 @@ var config = {
     development: {
         root: rootPath,
         app: {
-            name: 'joinNow'
+            name: 'HanGee joinNow'
         },
         port: 3000,
-        database: 'node-joinNow-development',
-        username: 'node_joinNow',
-        password: 'pass_joinNow',
         db: 'mongodb://localhost/node_joinNow_development',
         dbconfig: {
             db: 'mongodb://localhost/node_joinNow_development',
@@ -33,12 +30,9 @@ var config = {
     test: {
         root: rootPath,
         app: {
-            name: 'joinNow'
+            name: 'HanGee joinNow'
         },
         port: 3000,
-        database: 'node-joinNow-test',
-        username: 'node_joinNow',
-        password: 'pass_joinNow',
         db: 'mongodb://localhost/node_joinNow_test',
         dbconfig: {
             db: 'mongodb://localhost/node_joinNow_test',
@@ -51,12 +45,9 @@ var config = {
     production: {
         root: rootPath,
         app: {
-            name: 'joinNow'
+            name: 'HanGee joinNow'
         },
         port: 3000,
-        database: 'node-joinNow-production',
-        username: 'node_joinNow',
-        password: 'pass_joinNow',
         db: 'mongodb://localhost/node_joinNow_production',
         dbconfig: {
             db: 'mongodb://localhost/node_joinNow_production',
