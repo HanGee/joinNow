@@ -21,7 +21,7 @@ function notifyLiveReload(event) {
 gulp.task('develop', function() {
     livereload.listen(35729);
     nodemon({
-        script: 'app.js',
+        script: 'server.js',
         ext: 'js ejs',
     }).on('restart', function() {
         setTimeout(function() {
@@ -29,6 +29,7 @@ gulp.task('develop', function() {
         }, 500);
     });
 });
+
 gulp.task('styles', function() {
     return gulp.src('src/sass/*.scss')
         .pipe(sass({
@@ -43,6 +44,7 @@ gulp.task('styles', function() {
         .pipe(minifycss())
         .pipe(gulp.dest('public/css'));
 });
+
 gulp.task('watch', function() {
     gulp.watch('src/sass/*.scss', ['styles']);
     gulp.watch('app/views/*.swig', notifyLiveReload);
@@ -50,3 +52,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['develop', 'styles', 'watch']);
+
