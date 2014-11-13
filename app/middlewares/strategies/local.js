@@ -1,7 +1,9 @@
 var debug = require('debug')('nh2:middleware:passport:strategies');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var crypto = require('crypto');
 
+var config = require('../../../config/config');
 var db = require('../../models');
 
 
@@ -13,6 +15,8 @@ module.exports = function (app, config) {
         debug('嘗試登入 %s', email);
         debug('嘗試登入 %s', password);
         console.log('LocalStrategy', email, password);
+
+        password = crypto.createHash('sha1').update(password + config.hashScrect.pwd).digest('hex');
 
         return db.User
             .findOne()

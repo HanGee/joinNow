@@ -2,5 +2,8 @@
 
 
 {% block content %}
-    註冊完成joinNow
+<div class="col-lg-6">
+  {{ user.name }}
+</div>
+
 {% endblock %}

@@ -2,10 +2,8 @@ var db = require('../../models');
 
 module.exports = function (req, res, next) {
 
-
-    db.Article
+    db.User
         .findById(req.params.id)
-        .populate('author members')
         .exec(function (err, doc) {
 
             if (err){
@@ -15,8 +13,8 @@ module.exports = function (req, res, next) {
                 return res.status(404).send('404');
             }
 
-            res.render('article/edit', {
-                article: doc
+            res.render('user/show', {
+                user: doc
             });
         });
 

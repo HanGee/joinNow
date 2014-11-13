@@ -1,66 +1,54 @@
 // Example model
 
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
 
-module.exports = function (sequelize, DataTypes) {
+var ArticleSchema = new Schema({
 
-    var Article = sequelize.define('Article', {
-        title: {
-            type: DataTypes.STRING
-        },
+    title: {
+        type: String,
+        'default': ''
+    },
 
-        content: {
-            type: DataTypes.TEXT,
-        },
+    content: {
+        type: String,
+        'default': ''
+    },
 
-        commentsCount: {
-            type: DataTypes.INTEGER
-        },
+    author: {
+        type: mongoose.Schema.ObjectId,
+        required: true,
+        ref: 'User'
+    },
 
-        commentedAt: {
-            type: DataTypes.DATE
-        },
+    members: [{
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+    }],
 
-        firstImageUrl: {
-            type: DataTypes.STRING
-        },
+    createdAt: {
+        type: Date,
+        'default': Date.now
+    },
 
-        authorId: {
-            type: DataTypes.INTEGER
-        },
+    updatedAt: {
+        type: Date,
+        'default': Date.now
+    },
 
-        trashed: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false
-        }
+    trashed: {
+        type: Boolean,
+        required: true,
+        'default': false
+    }
 
-
-    }, {
-        classMethods: {
-            associate: function (models) {
-
-                //關聯作者
-
-
-
-
-                Article.hasMany(models.User, {as: 'Members'});
-                Article.hasOne(models.User, {as: 'Author', foreignKey: 'AuthorId'});
-
-                //Article.hasOne(models.User, {
-                //    as: 'Author'
-                //});
+});
 
 
-                //Article.hasOne(models.User);
-                //Article.belongsTo(models.User, {
-                //    as: 'Author',
-                //    through: 'worker_tasks'
-                //});
+ArticleSchema.pre('save', function(next){
+    this.updatedAt = new Date();
+    next();
+});
 
-            }
-        }
-    });
+module.exports = mongoose.model('Article', ArticleSchema);
 
-    return Article;
-};

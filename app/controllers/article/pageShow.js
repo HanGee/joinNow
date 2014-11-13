@@ -5,7 +5,7 @@ module.exports = function (req, res, next) {
 
     db.Article
         .findById(req.params.id)
-        .populate('author member')
+        .populate('author members')
         .exec(function (err, doc) {
 
             if (err){
