@@ -6,7 +6,6 @@ module.exports = function (req, res, next) {
         .where('trashed', false)
         .populate('author members')
         .exec(function(err, docs){
-            console.log(err, docs);
 
             res.render('article/list', {
                 articles: docs
