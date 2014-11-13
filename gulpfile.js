@@ -21,7 +21,7 @@ function notifyLiveReload(event) {
 gulp.task('develop', function() {
     livereload.listen(35729);
     nodemon({
-        script: 'app2.js',
+        script: 'app.js',
         ext: 'js ejs',
     }).on('restart', function() {
         setTimeout(function() {
