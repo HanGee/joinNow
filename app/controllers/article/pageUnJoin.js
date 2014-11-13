@@ -8,7 +8,7 @@ module.exports = function (req, res, next) {
     db.Article
         .findOneAndUpdate(conditions, {
             $pull: {
-                member: req.user._id
+                members: req.user._id
             }
         })
         .exec(function (err, doc) {

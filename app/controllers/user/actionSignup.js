@@ -10,6 +10,7 @@ module.exports = function (req, res, next) {
     }
 
     var data = _.pick(req.body, [
+        'name',
         'email',
         'password'
     ]);

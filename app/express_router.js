@@ -67,6 +67,8 @@ module.exports = function (app, config) {
     router.route('/logout')
         .get(Ctrl.user.actionLogout);
 
+    router.route('/users/:id')
+        .get(Ctrl.user.pageShow);
 
     router.route('/articles')
         .get(Ctrl.article.pageList)

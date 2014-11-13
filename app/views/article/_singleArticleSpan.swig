@@ -1,13 +1,11 @@
 {% macro render(article) %}
 
           <tr>
-            <td>{{ article.id }}</td>
             <td>
             	<a href="/articles/{{ article.id }}">{{ article.title }}</a>
             </td>
-            <td>{{ article.content }}</td>
             <td>
-            	<a href="/users/{{ article.author.id }}">{{ article.author.email }}</a>
+            	<a href="/users/{{ article.author.id }}">{{ article.author.name }}</a>
             </td>
             <td>
 	            {% if userId && userId === article.author.id %}

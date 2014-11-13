@@ -21,7 +21,7 @@ var ArticleSchema = new Schema({
         ref: 'User'
     },
 
-    member: [{
+    members: [{
         type: mongoose.Schema.ObjectId,
         ref: 'User'
     }],

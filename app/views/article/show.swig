@@ -2,24 +2,22 @@
 
 {% block content %}
 
-	<div>
-	    <div>id: {{article.id}} </div>
-	    <div>title: {{article.title}}</div>
+	<p>
+	    <h1>{{article.title}}</h1>
 	    <div>content: {{article.content}}</div>
 
-	</div>
+	</p>
 
-	<div><a href="/articles">Back to Articles</a></div>
+	<p><a href="/articles">Back to Articles</a></p>
 
   <h3>發起人</h3>
-    {{ article.author.email }}
+    {{ article.author.name }}
 
   <h3>參加者</h3>
   <ul>
   {% for member in article.members %}
     <li>
-    {{ member.id }}
-    {{ member.email }}
+      <a href="/users/{{ member.id }}">{{ member.name }}</a>
     </li>
   {% endfor %}
   </ul>

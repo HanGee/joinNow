@@ -13,9 +13,7 @@
 <table class="table">
 	<thead>
 		<tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Content</th>
+            <th width="60%">Title</th>
             <th>Author</th>
             <th>Function</th>
 		</tr>
