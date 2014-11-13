@@ -9,7 +9,9 @@ module.exports = function (req, res, next) {
         .findById(req.params.id)
         .exec(function (err, article) {
             if (article.author !== userId) {
-                return next(new Error('YOU_CAN_NOT_DELETE'));
+                req.flash('error', '刪除失敗');
+                res.redirect('/articles');
+                return;
             }
 
             article.trashed= true;
