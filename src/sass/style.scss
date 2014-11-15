@@ -4,3 +4,15 @@
 
 	@include border-radius(100%);
 }
+
+body {
+	font-size: 15px;
+}
+
+/* navbar */
+.navbar .navbar-header .navbar-brand {
+	font-size: 24px;
+}
+.navbar .navbar-default .navbar-fixed-top {	
+    padding-bottom: 2px;
+}
