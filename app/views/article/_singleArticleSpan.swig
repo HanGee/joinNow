@@ -5,7 +5,7 @@
             	<a href="/articles/{{ article.id }}">{{ article.title }}</a>
             </td>
             <td>
-                <img class="gravatar" src="http://www.gravatar.com/avatar/{{ article.author.gravatarHash }}?s=50" />
+                <img class="gravatar gravatar-list" src="http://www.gravatar.com/avatar/{{ article.author.gravatarHash }}?s=50" />
             	<a href="/users/{{ article.author.id }}">{{ article.author.name }}</a>
             </td>
             <td>

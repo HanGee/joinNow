@@ -1,8 +1,17 @@
 @import "compass/css3/border-radius";
 
 .gravatar {
-
 	@include border-radius(100%);
+}
+
+.gravatar-list {
+	width: 25px;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot');
+  src: url('/components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 body {

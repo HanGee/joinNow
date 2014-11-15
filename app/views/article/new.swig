@@ -1,14 +1,13 @@
 {% extends '../layout.swig' %}
 
 {% block content %}
-
 <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
     <li><a href="/articles">Articles</a></li>
     <li class="active">Add</li>
 </ol>
 
-<div class="col-lg-6">
+<div class="col-lg-8">
     <div class="well bs-component">
         <form class="form-horizontal" action="" method="POST">
         <fieldset>
@@ -22,7 +21,7 @@
           <div class="form-group">
             <label for="content" class="col-lg-2 control-label">內文:</label>
             <div class="col-lg-10">
-                <textarea class="form-control" name="content" id="content" class="myEditor" cols="30" rows="10"></textarea>
+                <textarea class="form-control" data-provide="markdown" name="content" id="content" class="myEditor" cols="30" rows="10"></textarea>
             </div>
           </div>
 
