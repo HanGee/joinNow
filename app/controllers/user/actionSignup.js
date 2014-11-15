@@ -1,4 +1,7 @@
 var _ = require('lodash');
+var crypto = require('crypto');
+
+var config = require('../../../config/config');
 var db = require('../../models');
 
 module.exports = function (req, res, next) {
@@ -10,17 +13,24 @@ module.exports = function (req, res, next) {
     }
 
     var data = _.pick(req.body, [
+        'name',
         'email',
         'password'
     ]);
 
-    db.User.create(data).complete(function (err, user) {
-        if (err) {
-            console.log('error', err);
-            req.flash('error', err);
-            res.redirect('/signup');
-            return;
-        }
-        res.redirect('/me');
-    });
+    data.email = data.email.trim().toLowerCase();
+    data.password = crypto.createHash('sha1').update(data.password + config.hashScrect.pwd).digest('hex');
+    data.gravatarHash = crypto.createHash('md5').update(data.email).digest('hex');
+
+    return db.User
+        .create(data, function(err, doc){
+            if (err) {
+                console.log('error', err);
+                req.flash('error', err);
+                res.redirect('/signup');
+                return;
+            }
+            res.redirect('/me');
+        });
+
 };

@@ -2,21 +2,30 @@ var env = process.env.NODE_ENV || 'development';
 
 var config = {
     development: {
-        database: 'node-joinNow-development',
-        username: 'node_joinNow',
-        password: 'pass_joinNow'
+        dbconfig: {
+            db: 'mongodb://localhost/node_joinNow_development',
+        },
+        hashScrect: {
+            pwd: ''
+        }
     },
 
     test: {
-        database: 'node-joinNow-test',
-        username: 'node_joinNow',
-        password: 'pass_joinNow'
+        dbconfig: {
+            db: 'mongodb://localhost/node_joinNow_test',
+        },
+        hashScrect: {
+            pwd: ''
+        }
     },
 
     production: {
-        database: 'node-joinNow-test',
-        username: 'node_joinNow',
-        password: 'pass_joinNow'
+        dbconfig: {
+            db: 'mongodb://localhost/node_joinNow_production',
+        },
+        hashScrect: {
+            pwd: ''
+        }
     }
 };
 

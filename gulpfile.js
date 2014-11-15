@@ -11,7 +11,6 @@ var livereload = require('tiny-lr')();
 function notifyLiveReload(event) {
     var fileName = require('path').relative(__dirname, event.path);
 
-    console.log('debug---', fileName);
     livereload.changed({
         body: {
             files: [fileName]
@@ -22,7 +21,7 @@ function notifyLiveReload(event) {
 gulp.task('develop', function() {
     livereload.listen(35729);
     nodemon({
-        script: 'app.js',
+        script: 'server.js',
         ext: 'js ejs',
     }).on('restart', function() {
         setTimeout(function() {
@@ -30,10 +29,12 @@ gulp.task('develop', function() {
         }, 500);
     });
 });
+
 gulp.task('styles', function() {
     return gulp.src('src/sass/*.scss')
         .pipe(sass({
-            style: 'expanded'
+            style: 'expanded',
+            compass: true
         }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
         .pipe(gulp.dest('public/css'))
@@ -43,6 +44,7 @@ gulp.task('styles', function() {
         .pipe(minifycss())
         .pipe(gulp.dest('public/css'));
 });
+
 gulp.task('watch', function() {
     gulp.watch('src/sass/*.scss', ['styles']);
     gulp.watch('app/views/*/*.swig', notifyLiveReload);
@@ -51,3 +53,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['develop', 'styles', 'watch']);
+

@@ -1,47 +1,54 @@
 // Example model
 
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
 
-module.exports = function (sequelize, DataTypes) {
+var ArticleSchema = new Schema({
 
-    var Article = sequelize.define('Article', {
-        title: {
-            type: DataTypes.STRING
-        },
+    title: {
+        type: String,
+        'default': ''
+    },
 
-        content: {
-            type: DataTypes.TEXT,
-        },
+    content: {
+        type: String,
+        'default': ''
+    },
 
-        commentsCount: {
-            type: DataTypes.INTEGER
-        },
+    author: {
+        type: mongoose.Schema.ObjectId,
+        required: true,
+        ref: 'User'
+    },
 
-        commentedAt: {
-            type: DataTypes.DATE
-        },
+    members: [{
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+    }],
 
-        firstImageUrl: {
-            type: DataTypes.STRING
-        },
+    createdAt: {
+        type: Date,
+        'default': Date.now
+    },
 
-        trashed: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false
-        }
+    updatedAt: {
+        type: Date,
+        'default': Date.now
+    },
+
+    trashed: {
+        type: Boolean,
+        required: true,
+        'default': false
+    }
+
+});
 
 
-    }, {
-        classMethods: {
-            associate: function (models) {
+ArticleSchema.pre('save', function(next){
+    this.updatedAt = new Date();
+    next();
+});
 
-                //關聯作者
-                Article.belongsTo(models.User);
-                Article.hasMany(models.Comment);
+module.exports = mongoose.model('Article', ArticleSchema);
 
-            }
-        }
-    });
-
-    return Article;
-};

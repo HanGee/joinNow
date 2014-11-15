@@ -13,7 +13,7 @@ module.exports = function (app, config) {
      */
     passport.serializeUser(function (user, done) {
         debug('serializeUser %j', user);
-        return done(null, user.id);
+        return done(null, user._id);
     });
 
 
@@ -22,12 +22,14 @@ module.exports = function (app, config) {
      */
     passport.deserializeUser(function (id, done) {
 
-        db.User.find(id).complete(function (err, user) {
-            if (!user) {
-                return done(new Error('登入失敗'));
-            }
-            return done(null, user.values);
-        });
+        return db.User
+            .findById(id)
+            .exec(function(err, user){
+                if (err || !user) {
+                    return done(null, false, {message: '登入失敗.'});
+                }
+                done(null, user);
+            });
     });
 
     require('./strategies/local')(app, config);

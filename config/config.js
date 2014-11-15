@@ -1,71 +1,61 @@
 var path = require('path'),
     _ = require('lodash'),
     rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'development',
-    localConfig = require('./config.local');
-;
+    env = process.env.NODE_ENV || 'development';
+
+var debug = require('debug')('joinNow:config');
+var debugDB = require('debug')('joinNow:db:query');
+
+function customDbLogger(){
+    return debugDB.apply(null, arguments);
+}
 
 var config = {
     development: {
         root: rootPath,
         app: {
-            name: 'joinNow'
+            name: 'HanGee joinNow'
         },
         port: 3000,
-        database: 'node-joinNow-development',
-        username: 'node_joinNow',
-        password: 'pass_joinNow',
+        db: 'mongodb://localhost/node_joinNow_development',
         dbconfig: {
-            dialect: 'mysql',
-            host: 'localhost',
-            define: {
-                charset: 'utf8',
-                collate: 'utf8_general_ci'
-            },
-            logging: console.log
+            db: 'mongodb://localhost/node_joinNow_development',
+        },
+        hashScrect: {
+            pwd: ''
         }
     },
 
     test: {
         root: rootPath,
         app: {
-            name: 'joinNow'
+            name: 'HanGee joinNow'
         },
         port: 3000,
-        database: 'node-joinNow-test',
-        username: 'node_joinNow',
-        password: 'pass_joinNow',
+        db: 'mongodb://localhost/node_joinNow_test',
         dbconfig: {
-            dialect: 'mysql',
-            host: 'localhost',
-            define: {
-                charset: 'utf8',
-                collate: 'utf8_general_ci'
-            },
-            logging: console.log
+            db: 'mongodb://localhost/node_joinNow_test',
+        },
+        hashScrect: {
+            pwd: ''
         }
     },
 
     production: {
         root: rootPath,
         app: {
-            name: 'joinNow'
+            name: 'HanGee joinNow'
         },
-        port: 3000,
-        database: 'node-joinNow-test',
-        username: 'node_joinNow',
-        password: 'pass_joinNow',
+        port: process.env.JOINNOW_PORT || 3000,
+        db: process.env.JOINNOW_DB || 'mongodb://localhost/node_joinNow_production',
         dbconfig: {
-            dialect: 'mysql',
-            host: 'localhost',
-            define: {
-                charset: 'utf8',
-                collate: 'utf8_general_ci'
-            },
-            logging: false
+            db: 'mongodb://localhost/node_joinNow_production',
+        },
+        hashScrect: {
+            pwd: process.env.JOINNOW_SCRECT_PWD || ''
         }
     }
 };
 
 
-module.exports = _.merge(config[env], localConfig);
+module.exports = config[env];

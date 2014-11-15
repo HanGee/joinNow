@@ -10,12 +10,11 @@
 	git clone ......
 	npm install
 	bower install
-	brew install mysql
 
 ####給熱血的新手攻城師教學
 
 ####step1
-在Mysql上建立一個 database 名為 `node-joinNow-development`
+安裝並啟動 mongodb
 
 ####step2
 複製 `config/config.local.sample` 到 `config/config.local.js` 並修改裡面的連線設定

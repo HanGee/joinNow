@@ -2,16 +2,37 @@
 
 {% block content %}
 
-	<div>
-	    <div>id: {{article.id}} </div>
-	    <div>title: {{article.title}}</div>
-	    <div>content: {{article.content}}</div>
-	    <div>author: {{article.User.email}}</div>
+	<p>
+	    <h1>{{article.title}}</h1>
+      <hr>
+	    <div>{{article.content}}</div>
 
-	</div>
+	</p>
 
-	<div><a href="/articles">Back to Articles</a></div>
+	<p><a href="/articles">回到列表</a></p>
 
+  <h3>發起人</h3>
+    <img class="gravatar" src="http://www.gravatar.com/avatar/{{ article.author.gravatarHash }}?s=70" />
+
+    {{ article.author.name }}
+
+  <h3>參加者</h3>
+  <ul>
+  {% for member in article.members %}
+    <li>
+      <img src="http://www.gravatar.com/avatar/{{ member.gravatarHash }}?s=50" />
+      <a href="/users/{{ member.id }}">{{ member.name }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+
+  <a class="btn btn-primary" href="/articles/{{article.id}}/join">
+    立刻參加
+  </a>
+  <a class="btn btn-default" href="/articles/{{article.id}}/unjoin">
+    取消參加
+  </a>
+{#
 
 	<h3>Comments</h3>
 	<ul>
@@ -20,11 +41,10 @@
 		{{ comment.id }}
 		{{ comment.title }}
 		{{ comment.content }}
-		{{ comment.UserId }}
+		{{ comment.authorId }}
 		</li>
 	{% endfor %}
 	</ul>
-
 
 	<h3>New Comment</h3>
 	<form class="form-horizontal" action="/articles/{{article.id}}/comment" method="POST">
@@ -51,6 +71,7 @@
           </div>
         </fieldset>
         </form>
+#}
 
 {% endblock %}
 

@@ -1,28 +1,59 @@
 // Example model
 
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
 
-module.exports = function (sequelize, DataTypes) {
+var UserSchema = new Schema({
 
-    var User = sequelize.define('User', {
-        email: {
-            type: DataTypes.STRING,
-            unique: true,
-            allowNull: false
-        },
-        password: {
-            type: DataTypes.STRING
-        },
-    }, {
-        classMethods: {
-            associate: function (models) {
-                // associations can be defined here
+    name: {
+        type: String,
+    },
 
-                User.hasMany(models.Article);
-                User.hasMany(models.Comment);
-
-            }
+    email: {
+        type: String,
+        unique: true,
+        required: true,
+        set: function toLower (str) {
+            return str.trim().toLowerCase();
         }
-    });
+    },
 
-    return User;
-};
+    password: {
+        type: String,
+        get: function(){
+            return 'IS_HIDDEN';
+        }
+    },
+
+    gravatarHash: {
+        type: String,
+    },
+
+    createdAt: {
+        type: Date,
+        'default': Date.now
+    },
+
+    updatedAt: {
+        type: Date,
+        'default': Date.now
+    },
+
+    trashed: {
+        type: Boolean,
+        //required: true,
+        'default': false
+    }
+
+});
+
+UserSchema.pre('save', function(next){
+    this.updatedAt = new Date();
+    next();
+});
+
+UserSchema.set('toObject', { getters: true });
+UserSchema.set('toJSON', { getters: true });
+
+module.exports = mongoose.model('User', UserSchema);
+

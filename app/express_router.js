@@ -19,7 +19,7 @@ module.exports = function (app, config) {
         return;
     });
 
-    console.log('controller ok');
+    console.log('controller 自動讀取 ok');
 
 
     /*------------------------------------------
@@ -27,12 +27,12 @@ module.exports = function (app, config) {
      * Param 定義區塊
      *
      * ------------------------------------------ */
-    router.param('id', function (req, res, next, id) {
-        if (/^\d+$/.test(id)) {
-            return next();
-        }
-        next(new Error('bad id'));
-    });
+    //router.param('id', function (req, res, next, id) {
+    //    if (/^\d+$/.test(id)) {
+    //        return next();
+    //    }
+    //    next(new Error('bad id'));
+    //});
 
     function ensureAuthenticated(req, res, next) {
         if (req.isAuthenticated()) {
@@ -67,13 +67,15 @@ module.exports = function (app, config) {
     router.route('/logout')
         .get(Ctrl.user.actionLogout);
 
+    router.route('/users/:id')
+        .get(Ctrl.user.pageShow);
 
     router.route('/articles')
         .get(Ctrl.article.pageList)
         .post(Ctrl.article.actionCreate);
 
     router.route('/articles/new')
-        .get(Ctrl.article.pageNew)
+        .get(ensureAuthenticated, Ctrl.article.pageNew)
         .post(ensureAuthenticated, Ctrl.article.actionCreate);
 
     router.route('/articles/edit')
@@ -81,15 +83,21 @@ module.exports = function (app, config) {
 
     router.route('/articles/:id')
         .get(Ctrl.article.pageShow)
-        .post(Ctrl.article.actionUpdate)
-        .delete(Ctrl.article.actionRemove);
+        .post(ensureAuthenticated, Ctrl.article.actionUpdate)
+        .delete(ensureAuthenticated, Ctrl.article.actionRemove);
+
+    router.route('/articles/:id/join')
+        .get(ensureAuthenticated, Ctrl.article.pageJoin);
+
+    router.route('/articles/:id/unjoin')
+        .get(ensureAuthenticated, Ctrl.article.pageUnJoin);
 
     router.route('/articles/:id/remove')
-        .get(Ctrl.article.actionRemove);
+        .get(ensureAuthenticated, Ctrl.article.actionRemove);
 
     router.route('/articles/:id/edit')
-        .get(Ctrl.article.pageEdit)
-        .post(Ctrl.article.actionUpdate);
+        .get(ensureAuthenticated, Ctrl.article.pageEdit)
+        .post(ensureAuthenticated, Ctrl.article.actionUpdate);
 
     app.use('/', router);
 };

@@ -4,21 +4,22 @@ var db = require('../../models');
 module.exports = function (req, res, next) {
 
     db.Article
-        .find({
-            where: {id: req.params.id},
-            include: [{
-                model: db.User,
-                attributes: ['id', 'email']
-            }, db.Comment
-            ]
-        })
-        .complete(function (err, article) {
-            console.log(JSON.stringify(article));
+        .findById(req.params.id)
+        .populate('author members')
+        .exec(function (err, doc) {
 
-            article.content = xss(article.content);
+            if (err){
+                return next(err);
+            }
+            if (!doc){
+                return res.status(404).send('404');
+            }
+
+            doc.content = xss(doc.content);
 
             res.render('article/show', {
-                article: article
+                article: doc
             });
         });
+
 };

@@ -25,6 +25,8 @@ module.exports = function (app, config) {
     swig.setDefaults({cache: false});
 
     // app.use(favicon(config.root + '/public/img/favicon.ico'));
+    app.use(express.static(config.root + '/public'));
+
     app.use(logger('dev'));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({
@@ -32,7 +34,6 @@ module.exports = function (app, config) {
     }));
     app.use(cookieParser());
     app.use(compress());
-    app.use(express.static(config.root + '/public'));
     app.use(session({
         keys: ['key1', 'key2'],
         //secureProxy: true // if you do SSL outside of node
@@ -49,10 +50,10 @@ module.exports = function (app, config) {
     app.use(function (req, res, next) {
 
         console.log('\n\n--------------------');
-        console.log('req.url', req.url);
+        console.log(req.method, req.url);
         console.log('req.query', req.query);
         console.log('req.body', req.body);
-        console.log('req.user', req.user);
+        console.log('req.user', req.user && req.user.email);
 
 
         res.locals.user = req.user;
