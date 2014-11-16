@@ -2,6 +2,7 @@
 
 .gravatar {
 	@include border-radius(100%);
+	width: 125px;
 }
 
 .gravatar-list {
@@ -19,9 +20,31 @@ body {
 }
 
 /* navbar */
-.navbar .navbar-header .navbar-brand {
-	font-size: 24px;
+.navbar {
+	.navbar-header .navbar-brand {
+		font-size: 24px;	
+	}
+	.navbar-default .navbar-fixed-top {	
+	    padding-bottom: 2px;
+	}
 }
-.navbar .navbar-default .navbar-fixed-top {	
-    padding-bottom: 2px;
+
+hr.style10 {
+	border-top: 1px dotted #8c8b8b;
+	border-bottom: 1px dotted #fff;
+}
+
+
+.join-block {
+	.join-block-head {
+
+	}
+	.join-block-content {
+		ul li{
+			list-style-type: none;
+		}
+	}
+	.join-block-footer {
+		
+	}
 }
