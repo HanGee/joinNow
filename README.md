@@ -1,42 +1,38 @@
-#JoinNow
+# JoinNow
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/HanGee/joinNow?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 現在就加入完成這個 [HanGee 黑客松](http://hackathon.tw/) 報名系統的攻城計畫吧！！
 
 ---
 
-####Setting
+### Installation
 
-	git clone ......
-	npm install
-	bower install
+#### step1
 
-####給熱血的新手攻城師教學
+Install mongodb
 
-####step1
-安裝並啟動 mongodb
+```
+$ aptitude install mongodb
+$ /etc/init.d/mongodb start
+```
 
-####step2
-複製 `config/config.local.sample` 到 `config/config.local.js` 並修改裡面的連線設定
+#### step2
 
-	cp config/config.local.sample config/config.local.js
+Copy `config/config.local.sample` to `config/config.local.js` and modify your config.
 
+```
+$ cp config/config.local.sample config/config.local.js
+```
 
-####step3
-安裝 gulp.js
+#### step3
 
-	npm install --global gulp
+Install dependencies packages and start app.
 
-####step4
-執行 gulp task
-
-	gulp
-
-
-
-
-
-
+```
+$ npm install
+$ bower install
+$ npm start
+```
 
 [127.0.0.1:3000](http://127.0.0.1:3000) 快來試試看吧
 

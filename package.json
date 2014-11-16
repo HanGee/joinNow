@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "gulp",
     "test": "./node_modules/.bin/mocha test/**/*.js"
   },
   "repository": {
@@ -28,8 +29,8 @@
     "glob": "~4.0.6",
     "lodash": "^2.4.1",
     "method-override": "~2.3.0",
-    "mongoose": "^3.8.19",
-    "morgan": "~1.4.1",
+    "mongoose": "^3.9.5",
+    "morgan": "^1.4.1",
     "mysql": "~2.5.2",
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
