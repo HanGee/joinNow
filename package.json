@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "gulp",
     "test": "./node_modules/.bin/mocha test/**/*.js"
   },
   "repository": {
