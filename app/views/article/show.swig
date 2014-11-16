@@ -4,7 +4,9 @@
   <div class="row">
     <h1>{{article.title}}</h1>
   </div>
-  <hr class="style10">
+  <h3 class="pinline-defult">
+    <span></span>
+  </h3>
   <div class="row">
     <div class="col-lg-9">
     	<p>
@@ -26,8 +28,9 @@
 
   <div class="join-block">
     <div class="join-block-head">
-      <hr class="style10">
-      <h3>參加者</h3>
+      <h3 class="pinline">
+        <span>參加者</span>
+      </h3>
     </div>
     <div class="join-block-content">
       <ul class="clearfix">
