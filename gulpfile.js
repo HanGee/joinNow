@@ -47,6 +47,7 @@ gulp.task('styles', function() {
 
 gulp.task('watch', function() {
     gulp.watch('src/sass/*.scss', ['styles']);
+    gulp.watch('app/views/*/*.swig', notifyLiveReload);
     gulp.watch('app/views/*.swig', notifyLiveReload);
     gulp.watch('public/css/*.css', notifyLiveReload);
 });
