@@ -8,6 +8,6 @@
   ],
   "dependencies": {
     "jquery": "~2.1.1",
-    "bootstrap-markdown": "2.7.0",
+    "bootstrap-markdown": "2.7.0"
   }
 }
