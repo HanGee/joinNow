@@ -39,6 +39,7 @@
     "sequelize-fixtures": "^0.3.3",
     "serve-favicon": "~2.1.6",
     "swig": "^1.4.2",
+    "swig-extras": "0.0.1",
     "xss": "^0.1.12"
   },
   "devDependencies": {

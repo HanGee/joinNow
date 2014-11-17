@@ -13,6 +13,7 @@ var passport = require('passport');
 var session = require('cookie-session');
 var flash = require('connect-flash');
 var swig = require('swig');
+var extras = require('swig-extras');
 
 module.exports = function (app, config) {
 
@@ -23,6 +24,8 @@ module.exports = function (app, config) {
     app.set('views', config.root + '/app/views');
     app.set('view cache', false);
     swig.setDefaults({cache: false});
+    extras.useFilter(swig, 'markdown');
+    extras.useTag(swig, 'markdown');
 
     // app.use(favicon(config.root + '/public/img/favicon.ico'));
     app.use(express.static(config.root + '/public'));

@@ -21,6 +21,4 @@ $( document ).ready(function() {
         btns: btnsCustom
     });
 
-    // markdown 轉換
-    $("#markdown-content").html(markdown.toHTML($("#markdown-content").html()));
 });
