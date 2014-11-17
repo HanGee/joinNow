@@ -1,4 +1,3 @@
-var xss = require('xss');
 var db = require('../../models');
 
 module.exports = function (req, res, next) {
@@ -14,8 +13,6 @@ module.exports = function (req, res, next) {
             if (!doc){
                 return res.status(404).send('404');
             }
-
-            doc.content = xss(doc.content);
 
             res.render('article/show', {
                 article: doc

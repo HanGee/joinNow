@@ -9,9 +9,9 @@
   </h3>
   <div class="row">
     <div class="col-lg-9">
-    	<p>
-    	    <div id="markdown-content">{{article.content}}</div>
-    	</p>
+      <p>
+        <div id="markdown-content">{{ article.content |markdown }}</div>
+      </p>
       <p>
         <a href="/articles">回到列表</a>
       </p>
