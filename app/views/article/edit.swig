@@ -2,9 +2,9 @@
 
 {% block content %}
 <ol class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <li><a href="/articles">Articles</a></li>
-    <li class="active">Edit</li>
+    <li><a href="/">首頁</a></li>
+    <li><a href="/articles">隊伍列表</a></li>
+    <li class="active">修改隊伍</li>
 </ol>
 
 <div class="col-lg-8">
