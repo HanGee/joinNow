@@ -2,9 +2,9 @@
 
 {% block content %}
 <ol class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <li><a href="/articles">Articles</a></li>
-    <li class="active">Add</li>
+    <li><a href="/">首頁</a></li>
+    <li><a href="/articles">隊伍列表</a></li>
+    <li class="active">創建新隊伍</li>
 </ol>
 
 <div class="col-lg-8">
@@ -12,14 +12,14 @@
         <form class="form-horizontal" action="" method="POST">
         <fieldset>
           <div class="form-group">
-            <label for="title" class="col-lg-2 control-label">Title:</label>
+            <label for="title" class="col-lg-2 control-label">隊伍名稱</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" id="title" name="title">
+              <input type="text" class="form-control" id="title" name="title" placeholder="請輸入您的隊伍名稱">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="content" class="col-lg-2 control-label">內文:</label>
+            <label for="content" class="col-lg-2 control-label">隊伍說明</label>
             <div class="col-lg-10">
                 <textarea class="form-control" data-provide="markdown" name="content" id="content" class="myEditor" cols="30" rows="10"></textarea>
             </div>
