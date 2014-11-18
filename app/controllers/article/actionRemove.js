@@ -8,7 +8,11 @@ module.exports = function (req, res, next) {
     db.Article
         .findById(req.params.id)
         .exec(function (err, article) {
-            if (article.author !== userId) {
+
+            /*
+            * TODO 這個比較超髒的XD 拜託看到的人順手改掉
+            */
+            if (''+article.author !== ''+userId) {
                 req.flash('error', '刪除失敗');
                 res.redirect('/articles');
                 return;
