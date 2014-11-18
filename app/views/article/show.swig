@@ -82,8 +82,8 @@
 
           <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-              <button class="btn btn-default">Cancel</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button class="btn btn-default">取消</button>
+              <button type="submit" class="btn btn-primary">送出</button>
             </div>
           </div>
         </fieldset>
@@ -91,4 +91,3 @@
 #}
 
 {% endblock %}
-

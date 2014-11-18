@@ -18,7 +18,7 @@
 <div class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a href="../" class="navbar-brand">Hangee Hackathon</a>
+      <a href="../" class="navbar-brand">黑客松報隊系統</a>
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -29,10 +29,7 @@
 
     <ul class="nav navbar-nav">
       <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/articles">Articles</a>
+        <a href="/articles">隊伍列表</a>
       </li>
     </ul>
 

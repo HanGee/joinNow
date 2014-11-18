@@ -10,8 +10,8 @@
             </td>
             <td>
 	            {% if userId && userId === article.author.id %}
-	                <a href="/articles/{{ article.id }}/edit">Edit</a>
-	                <a href="/articles/{{ article.id }}/remove">Delete</a>
+	                <a href="/articles/{{ article.id }}/edit">編輯</a>
+	                <a href="/articles/{{ article.id }}/remove">刪除</a>
 	            {% endif %}
             </td>
           </tr>
