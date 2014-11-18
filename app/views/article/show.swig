@@ -38,6 +38,9 @@
         <li class="pull-left col-lg-2">
           <img src="http://www.gravatar.com/avatar/{{ member.gravatarHash }}?s=50" />
           <a href="/users/{{ member.id }}">{{ member.name }}</a>
+          {% if article.author.id === userId %}
+            <br><a href="/articles/{{ article.id }}/members/{{ member.id }}/remove">移除報名</a>
+          {% endif %}
         </li>
       {% endfor %}
       </ul>
