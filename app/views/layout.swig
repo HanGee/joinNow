@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/components/bootstrap-markdown/css/bootstrap-markdown.min.css">
     <link rel="stylesheet" href="/components/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/customize.css">
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="/components/bootstrap-markdown/js/bootstrap-markdown.js"></script>
-    <script src="/components/fontawesome/css/font-awesome.min.css"></script>
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="http://localhost:35729/livereload.js"></script>
     {% block head %}{% endblock %}
