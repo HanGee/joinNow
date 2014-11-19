@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/components/bootstrap-markdown/css/bootstrap-markdown.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/customize.css">
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="/components/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+    <script src="/components/fontawesome/css/font-awesome.min.css"></script>
+    <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="http://localhost:35729/livereload.js"></script>
     {% block head %}{% endblock %}
 </head>
 <body>
 
 <!-- START NAV -->
-<div class="navbar navbar-default navbar-fixed-top">
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-      <a href="../" class="navbar-brand">黑客松報隊系統</a>
+      <a href="../" class="navbar-brand">黑客松組隊系統</a>
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -29,7 +32,7 @@
 
     <ul class="nav navbar-nav">
       <li>
-        <a href="/articles">隊伍列表</a>
+        <a href="/articles"><span class="fa fa-users"></span>隊伍列表</a>
       </li>
     </ul>
 
