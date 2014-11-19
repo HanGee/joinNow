@@ -6,6 +6,7 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/components/bootstrap-markdown/css/bootstrap-markdown.min.css">
+    <link rel="stylesheet" href="/components/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/customize.css">
     <script src="/components/jquery/dist/jquery.min.js"></script>
