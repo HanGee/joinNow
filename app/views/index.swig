@@ -5,10 +5,10 @@
   <div class="col-lg-10 col-lg-offset-1">
     <div class="bs-component">
       <div class="jumbotron">
-        <h1>11/22、11/23 兩天一夜
-        	<span style="color:#fcae11;">黑客松</span>
+        <h1>
+        	<span style="color:#fcae11;">歡迎進入</span> 黑客松組隊系統
         </h1>
-        <p>有高手大大、帥哥與美女人才們，有電有網路、有吃的有喝的，既然台灣的夏天嚴熱，當然還有附上空調視野絕佳的舒適環境，讓大家安心動手做設計、做開發！挑戰自我！</p>
+        <p>您可以透過本系統，與來自四面八方的朋友們，一同完成黑客松的專案，感受團隊合作和體驗微創業的過程組。</p>
         <p class="text-center"><a target="_blank" class="btn btn-primary btn-lg" href="http://hackathon.tw/">回首頁</a></p>
       </div>
     <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
