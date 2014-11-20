@@ -2,5 +2,5 @@
 
 
 {% block content %}
-    註冊完成joinNow
+    註冊完成 joinNow
 {% endblock %}

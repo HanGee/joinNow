@@ -8,14 +8,14 @@
         <fieldset>
           <legend>登入</legend>
           <div class="form-group">
-            <label for="email" class="col-lg-2 control-label">Email:</label>
+            <label for="email" class="col-lg-2 control-label">信箱：</label>
             <div class="col-lg-10">
               <input type="text" class="form-control" id="email" name="email">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="password" class="col-lg-2 control-label">Password:</label>
+            <label for="password" class="col-lg-2 control-label">密碼：</label>
             <div class="col-lg-10">
                 <input type="password" class="form-control" id="password" name="password">
             </div>
@@ -23,8 +23,8 @@
 
           <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-              <button class="btn btn-default">Cancel</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button class="btn btn-default">取消</button>
+              <button type="submit" class="btn btn-primary">提交</button>
             </div>
           </div>
         </fieldset>

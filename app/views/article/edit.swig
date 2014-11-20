@@ -12,14 +12,14 @@
         <form class="form-horizontal" action="" method="POST">
         <fieldset>
           <div class="form-group">
-            <label for="title" class="col-lg-2 control-label">Title:</label>
+            <label for="title" class="col-lg-2 control-label">隊伍名稱</label>
             <div class="col-lg-10">
               <input type="text" class="form-control" id="title" name="title" value="{{ article.title }}">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="content" class="col-lg-2 control-label">內文:</label>
+            <label for="content" class="col-lg-2 control-label">隊伍說明</label>
             <div class="col-lg-10">
                 <textarea class="form-control" data-provide="markdown-editable" name="content" id="content" class="myEditor" cols="30" rows="10">{{ article.content }}</textarea>
             </div>

@@ -8,28 +8,28 @@
           <legend>註冊</legend>
 
           <div class="form-group">
-            <label for="name" class="col-lg-2 control-label">Name:</label>
+            <label for="name" class="col-lg-2 control-label">名稱：</label>
             <div class="col-lg-10">
               <input type="text" class="form-control" id="name" name="name" required=true>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="email" class="col-lg-2 control-label">Email:</label>
+            <label for="email" class="col-lg-2 control-label">信箱：</label>
             <div class="col-lg-10">
               <input type="text" class="form-control" id="email" name="email" required=true>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="password" class="col-lg-2 control-label">Password:</label>
+            <label for="password" class="col-lg-2 control-label">密碼：</label>
             <div class="col-lg-10">
                 <input type="password" class="form-control" id="password" name="password" required=true>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="password_confirmation" class="col-lg-2 control-label">Confirmation:</label>
+            <label for="password_confirmation" class="col-lg-2 control-label">再確認：</label>
             <div class="col-lg-10">
                 <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required=true>
             </div>
@@ -37,8 +37,8 @@
 
           <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-              <button class="btn btn-default">Cancel</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button class="btn btn-default">取消</button>
+              <button type="submit" class="btn btn-primary">提交</button>
             </div>
           </div>
         </fieldset>

@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/components/bootstrap-markdown/css/bootstrap-markdown.min.css">
-    <link rel="stylesheet" href="/components/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/customize.css">
+    <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/components/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet">
+    <link href="/components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/customize.css" rel="stylesheet">
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="/components/bootstrap-markdown/js/bootstrap-markdown.js"></script>
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="http://localhost:35729/livereload.js"></script>
     {% block head %}{% endblock %}
 </head>
-<body>
 
+<body>
 <!-- START NAV -->
 <div class="navbar navbar-default navbar-fixed-top navbar-inverse">
   <div class="container">
