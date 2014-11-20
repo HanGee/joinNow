@@ -35,7 +35,6 @@ public/components
 *.swp
 
 config/config.local.js
-public/css
 
 # npm debug log
 npm-debug.log
