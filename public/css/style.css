@@ -1,0 +1,97 @@
+.gravatar {
+  border-radius: 100%;
+  width: 125px;
+}
+
+.gravatar-list {
+  width: 25px;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("/components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot");
+  src: url("/components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff") format("woff"), url("/components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("/components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+}
+body {
+  font-size: 15px;
+}
+
+/* navbar */
+.navbar .navbar-header .navbar-brand {
+  font-size: 24px;
+}
+.navbar .navbar-default .navbar-fixed-top {
+  padding-bottom: 2px;
+}
+
+.join-block .join-block-content ul li {
+  list-style-type: none;
+}
+
+h3.pinline {
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  font-size: 1em;
+  font-weight: 100;
+  margin: 20px 0;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  text-transform: uppercase;
+}
+h3.pinline span {
+  font-size: 23px;
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+h3.pinline span:before, h3.pinline span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  background: #777;
+  width: 99999px;
+}
+h3.pinline span:before {
+  left: 100%;
+  margin-left: 20px;
+}
+h3.pinline span:after {
+  right: 100%;
+  margin-right: 20px;
+}
+
+h3.pinline-defult {
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  font-size: 1em;
+  font-weight: 100;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  text-transform: uppercase;
+}
+h3.pinline-defult span {
+  font-size: 23px;
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+h3.pinline-defult span:before, h3.pinline-defult span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  background: #777;
+  width: 99999px;
+}
+h3.pinline-defult span:before {
+  left: 100%;
+}
+h3.pinline-defult span:after {
+  right: 100%;
+}
+.navbar-right li p {
+  color: #999;
+}
