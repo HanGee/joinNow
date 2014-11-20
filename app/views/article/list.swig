@@ -10,12 +10,12 @@
 
 <p><a href="/articles/new" class="btn btn-primary">創建新隊伍</a></p>
 
-<table class="table">
+<table class="table table-bordered table-hover table-condensed">
 	<thead>
-		<tr>
+		<tr class="active">
             <th width="60%">專案 / 隊伍名稱</th>
             <th>隊長</th>
-            <th></th>
+            <th>管理權限</th>
 		</tr>
     </thead>
     <tbody>
