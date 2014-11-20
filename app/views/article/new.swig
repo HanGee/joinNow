@@ -27,7 +27,7 @@
 
           <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-              <button type="button" class="btn btn-default">取消</button>
+        <!--      <button type="button" class="btn btn-default">取消</button> -->
               <button type="submit" class="btn btn-primary">送出</button>
             </div>
           </div>
