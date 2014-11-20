@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
 <!-- START NAV -->
 <div class="navbar navbar-default navbar-fixed-top navbar-inverse">
   <div class="container">
@@ -45,6 +46,7 @@
   </div>
 </div>
 <!-- END NAV -->
+<div id="mask" ></div>
 <BR><BR><BR><BR>
 
 
@@ -89,6 +91,5 @@
 
 <script src="/components/jquery/dist/jquery.min.js"></script>
 <script src="/js/myEditor.js"></script>
-
 </body>
 </html>

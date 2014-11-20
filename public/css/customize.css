@@ -156,3 +156,19 @@ body {
         content: attr(data-title);
     }
 }
+
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+  background-color: #000;
+  opacity:0.3;
+}
+
+.navbar-right li p {
+  color: #999;
+}
