@@ -13,7 +13,7 @@
         <div id="markdown-content">{{ article.content |markdown }}</div>
       </p>
       <p>
-        <a href="/articles">回到列表</a>
+        <a class="btn btn-primary" href="/articles">回到隊伍列表</a>
       </p>
     </div>
 
@@ -39,7 +39,7 @@
           <img src="http://www.gravatar.com/avatar/{{ member.gravatarHash }}?s=50" />
           <a href="/users/{{ member.id }}">{{ member.name }}</a>
           {% if article.author.id === userId %}
-            <br><a href="/articles/{{ article.id }}/members/{{ member.id }}/remove">移除報名</a>
+            <br><a class="btn btn-btn btn-warning" href="/articles/{{ article.id }}/members/{{ member.id }}/remove">移除報名</a>
           {% endif %}
         </li>
       {% endfor %}
