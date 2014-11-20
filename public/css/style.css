@@ -95,3 +95,21 @@ h3.pinline-defult span:after {
 .navbar-right li p {
   color: #999;
 }
+
+
+.bg-pattern_vertical {
+
+}
+
+.bg-pattern {
+background-image: url(../images/pattern_vertical.png);
+/*background-image: url(../images/pattern_no.png);*/
+background-repeat: repeat;
+position: fixed;
+opacity: 0.2;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+z-index: -1;
+}

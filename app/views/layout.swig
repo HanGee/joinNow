@@ -46,7 +46,7 @@
   </div>
 </div>
 <!-- END NAV -->
-<div id="mask" ></div>
+<div class="bg-pattern bg-pattern_vertical"></div>
 <BR><BR><BR><BR>
 
 
