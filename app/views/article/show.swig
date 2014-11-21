@@ -39,7 +39,11 @@
           <img src="http://www.gravatar.com/avatar/{{ member.gravatarHash }}?s=50" />
           <a href="/users/{{ member.id }}">{{ member.name }}</a>
           {% if article.author.id === userId %}
-            <br><a class="btn btn-btn btn-warning" href="/articles/{{ article.id }}/members/{{ member.id }}/remove">移除報名</a>
+            <span>
+              <a href="/articles/{{ article.id }}/members/{{ member.id }}/remove">
+                <i class="fa fa-close" style="color:red;"></i>
+              </a>
+            </span>
           {% endif %}
         </li>
       {% endfor %}

@@ -7,8 +7,8 @@
     <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/components/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css">
     <link href="/components/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/customize.css" rel="stylesheet" type="text/css">
-
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="/components/bootstrap-markdown/js/bootstrap-markdown.js"></script>
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
 <!-- START NAV -->
 <div class="navbar navbar-default navbar-fixed-top navbar-inverse">
   <div class="container">
@@ -45,6 +46,7 @@
   </div>
 </div>
 <!-- END NAV -->
+<div class="bg-pattern bg-pattern_vertical"></div>
 <BR><BR><BR><BR>
 
 
@@ -89,6 +91,5 @@
 
 <script src="/components/jquery/dist/jquery.min.js"></script>
 <script src="/js/myEditor.js"></script>
-
 </body>
 </html>
