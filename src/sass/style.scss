@@ -108,3 +108,28 @@ h3.pinline-defult {
     }
   }
 }
+
+.navbar-right li p {
+	color: #999;
+}
+
+body {
+  font-family: "Hannotate TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.bg-pattern {
+  background-image: url(../images/pattern_vertical.png);
+  /*background-image: url(../images/pattern_no.png);*/
+  background-repeat: repeat;
+  position: fixed;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+table.table tbody tr td {
+ padding-left: 15px; 
+}

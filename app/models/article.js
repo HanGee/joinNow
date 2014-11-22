@@ -15,6 +15,11 @@ var ArticleSchema = new Schema({
         'default': ''
     },
 
+    githubUrl: {
+        type: String,
+        'default': ''
+    },
+
     author: {
         type: mongoose.Schema.ObjectId,
         required: true,

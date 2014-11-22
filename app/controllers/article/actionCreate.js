@@ -5,7 +5,8 @@ module.exports = function (req, res, next) {
     //
     var data = _.pick(req.body, [
         'title',
-        'content'
+        'content',
+        'githubUrl',
     ]);
 
     data.author = req.user._id;
