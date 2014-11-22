@@ -54,6 +54,7 @@
         </li>
       {% endfor %}
       </ul>
+    {% if article.author.id != userId %}
     <div class="join-block-footer text-center">
       <a class="btn btn-primary" href="/articles/{{article.id}}/join">
         立刻參加
@@ -61,7 +62,8 @@
       <a class="btn btn-default" href="/articles/{{article.id}}/unjoin">
         取消參加
       </a>
-  </div>
+    </div>
+    {% endif %}
 {#
 
 	<h3>Comments</h3>
