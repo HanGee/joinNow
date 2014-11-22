@@ -20,6 +20,11 @@ var ArticleSchema = new Schema({
         'default': ''
     },
 
+    hackpanUrl: {
+        type: String,
+        'default': ''
+    },
+
     author: {
         type: mongoose.Schema.ObjectId,
         required: true,

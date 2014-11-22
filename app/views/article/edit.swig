@@ -19,9 +19,16 @@
           </div>
 
           <div class="form-group">
-            <label for="title" class="col-lg-2 control-label">Github</label>
+            <label for="githubUrl" class="col-lg-2 control-label">Github</label>
             <div class="col-lg-10">
               <input type="text" class="form-control" id="githubUrl" name="githubUrl" placeholder="請輸入您的 Github 的 URL" value="{{ article.githubUrl }}">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="hackpanUrl" class="col-lg-2 control-label">Hackpan</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="hackpanUrl" name="hackpanUrl" placeholder="請輸入您的 Hackpan 的 URL" value="{{ article.hackpanUrl }}">
             </div>
           </div>
 
