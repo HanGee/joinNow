@@ -29,6 +29,7 @@ node_modules
 
 #
 public/components
+public/css
 .sass-cache
 .idea
 
@@ -38,3 +39,5 @@ config/config.local.js
 
 # npm debug log
 npm-debug.log
+
+

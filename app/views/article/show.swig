@@ -3,6 +3,12 @@
 {% block content %}
   <div class="row">
     <h1>{{article.title}}</h1>
+    <h4>
+      Github: <a target="_blank" href="{{article.githubUrl}}">{{article.githubUrl}}</a>
+    </h4>
+    <h4>
+      Hackpan: <a target="_blank" href="{{article.hackpanUrl}}">{{article.hackpanUrl}}</a>
+    </h4>
   </div>
   <h3 class="pinline-defult">
     <span></span>
