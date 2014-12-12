@@ -4,7 +4,7 @@
   <div class="row">
     <h1>{{article.title}}</h1>
     <h4>
-      Github: <a target="_blank" href="{{article.githubUrl}}">{{article.githubUrl}}</a>
+      Github: <a target="_blank" href="https://github.com/{{article.githubUrl}}">https://github.com/{{article.githubUrl}}</a>
     </h4>
     <h4>
       Hackpan: <a target="_blank" href="{{article.hackpanUrl}}">{{article.hackpanUrl}}</a>
