@@ -21,7 +21,7 @@
           <div class="form-group">
             <label for="githubUrl" class="col-lg-2 control-label">Github</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" id="githubUrl" name="githubUrl" placeholder="請輸入您的 Github 的 URL" value="{{ article.githubUrl }}">
+              https://github.com/{{ article.githubUrl }}
             </div>
           </div>
 

@@ -1,5 +1,40 @@
 var db = require('../../models');
+var GitHubApi = require("github");
+var _ = require("lodash");
 
 module.exports = function (req, res, next) {
-    res.render('article/new');
+	console.log(req.user.githubToken);
+
+    // 定義
+    var github = new GitHubApi({
+        // required
+        version: "3.0.0",
+        // optional
+        debug: true,
+        protocol: "https",
+        host: "api.github.com",
+        timeout: 5000,
+    });
+    
+	github.authenticate({
+	    type: "oauth",
+	    token: req.user.githubToken
+	});
+
+    github.repos.getAll({}, function(err, githubRes) {
+		var gitRepos = [];
+		_.forEach(githubRes, function(val, key) {
+			gitRepos.push({
+				name: val.name,
+				value: val.full_name
+			});
+			// console.log(JSON.stringify(val.name) + '-' + JSON.stringify(val.full_name)); 
+		});
+        console.log(JSON.stringify(gitRepos));
+
+	    res.render('article/new',{
+	    	gitRepos: gitRepos
+	    });
+    });
+
 };

@@ -9,6 +9,10 @@ var UserSchema = new Schema({
         type: String,
     },
 
+    githubToken: {
+        type: String,
+    },
+    
     email: {
         type: String,
         unique: true,

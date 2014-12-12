@@ -4,7 +4,7 @@
   <div class="row">
     <h1>{{article.title}}</h1>
     <h4>
-      Github: <a target="_blank" href="{{article.githubUrl}}">{{article.githubUrl}}</a>
+      Github: <a target="_blank" href="https://github.com/{{article.githubUrl}}">https://github.com/{{article.githubUrl}}</a>
     </h4>
     <h4>
       Hackpan: <a target="_blank" href="{{article.hackpanUrl}}">{{article.hackpanUrl}}</a>
@@ -32,6 +32,45 @@
     </div>
   </div>
 
+  <div class="commit-block">
+    <div class="commit-block-head">
+      <h3 class="pinline">
+        <span>Commit紀錄</span>
+        
+      </h3>
+    </div>
+    <div class="commit-block-content">
+    <table class="table table-bordered table-hover table-condensed">
+      <thead>
+        <tr class="active">
+                <th>修改紀錄</th>
+                <th>貢獻者</th>
+                <th>修改時間</th>
+                <th>貢獻者信箱</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for gitCommit in gitCommits %}
+              <tr>
+                <td>
+                  {{gitCommit.message}}
+                </td>
+                <td>
+                  {{gitCommit.committerName}}
+                </td>
+                <td>
+                  {{gitCommit.committerDate}}            
+                </td>
+                <td>
+                  {{gitCommit.committerEmail}}
+                </td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+  </div>
+
   <div class="join-block">
     <div class="join-block-head">
       <h3 class="pinline">
@@ -54,6 +93,7 @@
         </li>
       {% endfor %}
       </ul>
+    {% if article.author.id != userId %}
     <div class="join-block-footer text-center">
       <a class="btn btn-primary" href="/articles/{{article.id}}/join">
         立刻參加
@@ -61,7 +101,8 @@
       <a class="btn btn-default" href="/articles/{{article.id}}/unjoin">
         取消參加
       </a>
-  </div>
+    </div>
+    {% endif %}
 {#
 
 	<h3>Comments</h3>
