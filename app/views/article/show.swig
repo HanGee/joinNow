@@ -32,6 +32,45 @@
     </div>
   </div>
 
+  <div class="commit-block">
+    <div class="commit-block-head">
+      <h3 class="pinline">
+        <span>Commit紀錄</span>
+        
+      </h3>
+    </div>
+    <div class="commit-block-content">
+    <table class="table table-bordered table-hover table-condensed">
+      <thead>
+        <tr class="active">
+                <th>修改紀錄</th>
+                <th>貢獻者</th>
+                <th>修改時間</th>
+                <th>貢獻者信箱</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for gitCommit in gitCommits %}
+              <tr>
+                <td>
+                  {{gitCommit.message}}
+                </td>
+                <td>
+                  {{gitCommit.committerName}}
+                </td>
+                <td>
+                  {{gitCommit.committerDate}}            
+                </td>
+                <td>
+                  {{gitCommit.committerEmail}}
+                </td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+  </div>
+
   <div class="join-block">
     <div class="join-block-head">
       <h3 class="pinline">
