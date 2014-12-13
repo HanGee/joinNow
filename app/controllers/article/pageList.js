@@ -1,6 +1,12 @@
 var db = require('../../models');
 
 module.exports = function (req, res, next) {
+	var token = true;
+	if(req.user != undefined) {
+		if(req.user.githubToken == undefined) {
+			token = false;
+	    }
+	}
 
     return db.Article.find()
         .where('trashed', false)
@@ -8,7 +14,8 @@ module.exports = function (req, res, next) {
         .exec(function(err, docs){
 
             res.render('article/list', {
-                articles: docs
+                articles: docs,
+                token: token
             });
         });
 
