@@ -8,14 +8,14 @@
         <fieldset>
           <legend>登入</legend>
           <div class="form-group">
-            <label for="name" class="col-lg-2 control-label">Github帳號：</label>
+            <label for="email" class="col-lg-2 control-label">信箱：</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" id="name" name="name">
+              <input type="text" class="form-control" id="email" name="email">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="password" class="col-lg-2 control-label">Github密碼：</label>
+            <label for="password" class="col-lg-2 control-label">密碼：</label>
             <div class="col-lg-10">
                 <input type="password" class="form-control" id="password" name="password">
             </div>

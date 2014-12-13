@@ -16,25 +16,31 @@ module.exports = function (req, res, next) {
         timeout: 5000,
     });
     
-	github.authenticate({
-	    type: "oauth",
-	    token: req.user.githubToken
-	});
-
-    github.repos.getAll({}, function(err, githubRes) {
-		var gitRepos = [];
-		_.forEach(githubRes, function(val, key) {
-			gitRepos.push({
-				name: val.name,
-				value: val.full_name
-			});
-			// console.log(JSON.stringify(val.name) + '-' + JSON.stringify(val.full_name)); 
+	var gitRepos = [];
+    if(req.user.githubToken != undefined) {
+		github.authenticate({
+		    type: "oauth",
+		    token: req.user.githubToken
 		});
-        console.log(JSON.stringify(gitRepos));
 
+	    github.repos.getAll({}, function(err, githubRes) {
+			_.forEach(githubRes, function(val, key) {
+				gitRepos.push({
+					name: val.name,
+					value: val.full_name
+				});
+				// console.log(JSON.stringify(val.name) + '-' + JSON.stringify(val.full_name)); 
+			});
+	        console.log(JSON.stringify(gitRepos));
+
+		    res.render('article/new',{
+		    	gitRepos: gitRepos
+		    });
+	    });
+    } else {
 	    res.render('article/new',{
 	    	gitRepos: gitRepos
 	    });
-    });
+    }
 
 };
