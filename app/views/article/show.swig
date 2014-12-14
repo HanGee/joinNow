@@ -7,7 +7,7 @@
       Github: <a target="_blank" href="https://github.com/{{article.githubUrl}}">https://github.com/{{article.githubUrl}}</a>
     </h4>
     <h4>
-      Hackpan: <a target="_blank" href="{{article.hackpanUrl}}">{{article.hackpanUrl}}</a>
+      Hackpad: <a target="_blank" href="{{article.hackpadUrl}}">{{article.hackpadUrl}}</a>
     </h4>
   </div>
   <h3 class="pinline-defult">

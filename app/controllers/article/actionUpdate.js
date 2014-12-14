@@ -10,7 +10,7 @@ module.exports = function (req, res, next) {
             article.title = req.body.title;
             article.content = req.body.content;
             article.githubUrl = req.body.githubUrl;
-            article.hackpanUrl = req.body.hackpanUrl;
+            article.hackpadUrl = req.body.hackpadUrl;
 
             article.save(function (err, doc) {
                 if (err) {

@@ -26,9 +26,9 @@
           </div>
 
           <div class="form-group">
-            <label for="hackpanUrl" class="col-lg-2 control-label">Hackpan</label>
+            <label for="hackpadUrl" class="col-lg-2 control-label">Hackpad</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" id="hackpanUrl" name="hackpanUrl" placeholder="請輸入您的 Hackpan 的 URL" value="{{ article.hackpanUrl }}">
+              <input type="text" class="form-control" id="hackpadUrl" name="hackpadUrl" placeholder="請輸入您的 Hackpad 的 URL" value="{{ article.hackpadUrl }}">
             </div>
           </div>
 
