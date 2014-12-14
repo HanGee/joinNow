@@ -14,8 +14,8 @@ var config = {
     development: {
         root: rootPath,
         github: {
-            clientID: '0846b7eed362c8a51b37',
-            clientSecret: '5e0142004acafd397cf553e31eee61a72f99e7c7',
+            clientID: '5e3364a9b7a6162f3bff',
+            clientSecret: '182eb05b7410f09ea8c1c86ea9491fbed04a3a90',
             callbackURL: 'http://127.0.0.1:3000/auth/github-callback',
             redirectUri: 'http://127.0.0.1:3000/'
         },
