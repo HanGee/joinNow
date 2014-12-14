@@ -108,5 +108,8 @@ module.exports = function (app, config) {
     router.route('/auth/github-callback')
         .get(ensureAuthenticated, Ctrl.auth.actionGithubCallback);
         
+    router.route('/auth/reset-github')
+        .get(ensureAuthenticated, Ctrl.auth.actionResetGithub);
+
     app.use('/', router);
 };
