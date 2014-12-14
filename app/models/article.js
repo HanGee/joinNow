@@ -25,7 +25,7 @@ var ArticleSchema = new Schema({
         'default': ''
     },
 
-    hackpanUrl: {
+    hackpadUrl: {
         type: String,
         'default': ''
     },

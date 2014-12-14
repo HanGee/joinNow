@@ -7,7 +7,7 @@ module.exports = function (req, res, next) {
         'title',
         'content',
         'githubUrl',
-        'hackpanUrl',
+        'hackpadUrl',
     ]);
 
     data.author = req.user._id;
