@@ -7,9 +7,19 @@
     <li class="active">隊伍列表</li>
 </ol>
 
-
-<p><a href="/articles/new" class="btn btn-primary">創建新隊伍</a></p>
-
+{% if token == false %}
+    <div class="container">
+      <div class="bs-component">
+        <div class="alert alert-dismissable alert-warning">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <h4>提示</h4>
+          <p>尚未綁定 Github 帳號，請<a target="_blank" href="/auth/github">點我</a>這邊做綁定動作，才可創建隊伍。</p>
+        </div>
+      </div>
+    </div>
+{% else %}
+    <p><a href="/articles/new" class="btn btn-primary">創建新隊伍</a></p>
+{% endif %}
 <table class="table table-bordered table-hover table-condensed">
 	<thead>
 		<tr class="active">

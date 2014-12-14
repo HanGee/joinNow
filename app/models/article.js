@@ -20,6 +20,11 @@ var ArticleSchema = new Schema({
         'default': ''
     },
 
+    githubToken: {
+        type: String,
+        'default': ''
+    },
+
     hackpanUrl: {
         type: String,
         'default': ''

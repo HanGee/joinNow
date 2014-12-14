@@ -7,7 +7,6 @@ module.exports = function (app, config) {
     app.use(passport.initialize());
     app.use(passport.session());
 
-
     /*
      * 序列化：將 id 存入 session
      */
@@ -31,8 +30,9 @@ module.exports = function (app, config) {
                 done(null, user);
             });
     });
-
+    // console.log(app);
     require('./strategies/local')(app, config);
+    require('./strategies/github')(app, config);
 
 };
 

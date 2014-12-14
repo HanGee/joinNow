@@ -102,5 +102,11 @@ module.exports = function (app, config) {
         .get(ensureAuthenticated, Ctrl.article.pageEdit)
         .post(ensureAuthenticated, Ctrl.article.actionUpdate);
 
+    router.route('/auth/github')
+        .get(ensureAuthenticated, Ctrl.auth.actionGithub);
+
+    router.route('/auth/github-callback')
+        .get(ensureAuthenticated, Ctrl.auth.actionGithubCallback);
+        
     app.use('/', router);
 };

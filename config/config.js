@@ -13,6 +13,12 @@ function customDbLogger(){
 var config = {
     development: {
         root: rootPath,
+        github: {
+            clientID: '0846b7eed362c8a51b37',
+            clientSecret: '5e0142004acafd397cf553e31eee61a72f99e7c7',
+            callbackURL: 'http://127.0.0.1:3000/auth/github-callback',
+            redirectUri: 'http://127.0.0.1:3000/'
+        },
         app: {
             name: 'HanGee joinNow'
         },
@@ -28,6 +34,12 @@ var config = {
 
     test: {
         root: rootPath,
+        github: {
+            clientID: '0846b7eed362c8a51b37',
+            clientSecret: '5e0142004acafd397cf553e31eee61a72f99e7c7',
+            callbackURL: 'http://127.0.0.1:3000/auth/github-callback',
+            redirectUri: 'http://127.0.0.1:3000/'
+        },
         app: {
             name: 'HanGee joinNow'
         },
@@ -43,6 +55,12 @@ var config = {
 
     production: {
         root: rootPath,
+        github: {
+            clientID: '0846b7eed362c8a51b37',
+            clientSecret: '5e0142004acafd397cf553e31eee61a72f99e7c7',
+            callbackURL: 'http://joinnow.hackathon.tw/auth/github-callback',
+            redirectUri: 'http://joinnow.hackathon.tw/'
+        },
         app: {
             name: 'HanGee joinNow'
         },
