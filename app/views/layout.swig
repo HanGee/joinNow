@@ -12,7 +12,6 @@
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="/components/bootstrap-markdown/js/bootstrap-markdown.js"></script>
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="http://localhost:35729/livereload.js"></script>
     {% block head %}{% endblock %}
 </head>
 

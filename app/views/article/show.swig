@@ -42,7 +42,7 @@
     <div class="commit-block-content">
     <table class="table table-bordered table-hover table-condensed">
       <thead>
-        <tr class="active">
+        <tr>
                 <th>修改紀錄</th>
                 <th>貢獻者</th>
                 <th>修改時間</th>

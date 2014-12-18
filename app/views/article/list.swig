@@ -22,7 +22,7 @@
 {% endif %}
 <table class="table table-bordered table-hover table-condensed">
 	<thead>
-		<tr class="active">
+		<tr>
             <th width="60%">專案 / 隊伍名稱</th>
             <th>隊長</th>
             <th>管理權限</th>

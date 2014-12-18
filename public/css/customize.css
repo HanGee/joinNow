@@ -15,6 +15,7 @@
   line-height: 1.42857143;
   vertical-align: middle;
   border-top: 1px solid #ddd;
+  color: ghostwhite;
 }
 
 .form-group {
@@ -169,6 +170,19 @@ a {
   opacity:0.3;
 }
 
+h1, h3, h4, h5, h6 {
+  color: white;
+}
+
+.breadcrumb {
+  background-color: rgba(245, 245, 245, 0);
+}
+
 .navbar-right li p {
   color: #999;
+}
+
+p {
+  margin: 0 0 10px;
+  color: white;
 }

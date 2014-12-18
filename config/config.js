@@ -57,14 +57,14 @@ var config = {
         root: rootPath,
         github: {
             clientID: '0846b7eed362c8a51b37',
-            clientSecret: '5e0142004acafd397cf553e31eee61a72f99e7c7',
+            clientSecret: '0c3136c417faacefb735df1aef5a2a0c20a09773',
             callbackURL: 'http://joinnow.hackathon.tw/auth/github-callback',
             redirectUri: 'http://joinnow.hackathon.tw/'
         },
         app: {
             name: 'HanGee joinNow'
         },
-        port: process.env.JOINNOW_PORT || 3000,
+        port: process.env.JOINNOW_PORT || 3002,
         db: process.env.JOINNOW_DB || 'mongodb://localhost/node_joinNow_production',
         dbconfig: {
             db: 'mongodb://localhost/node_joinNow_production',
