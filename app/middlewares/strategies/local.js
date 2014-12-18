@@ -1,4 +1,4 @@
-var debug = require('debug')('nh2:middleware:passport:strategies');
+var debug = require('debug')('joinNow:middleware:passport:strategies');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var crypto = require('crypto');

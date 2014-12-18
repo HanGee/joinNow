@@ -1,4 +1,4 @@
-var debug = require('debug')('nh2:express');
+var debug = require('debug')('joinNow:express');
 var express = require('express');
 var glob = require('glob');
 

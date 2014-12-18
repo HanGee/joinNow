@@ -1,1 +1,0 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "name" : "_id_", "ns" : "node_joinNow_development.users" }, { "v" : 1, "unique" : true, "key" : { "email" : 1 }, "name" : "email_1", "ns" : "node_joinNow_development.users", "background" : true, "safe" : null } ] }

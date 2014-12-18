@@ -1,3 +1,5 @@
+
+var debug = require('debug')('joinNow:middleware:passport:strategies');
 var passport = require('passport');
 var GitHubStrategy = require('passport-github2').Strategy;
 var config = require('../../../config/config');

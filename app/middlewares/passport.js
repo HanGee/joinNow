@@ -1,4 +1,4 @@
-var debug = require('debug')('nh2:middleware:passport');
+var debug = require('debug')('joinNow:middleware:passport');
 
 var passport = require('passport');
 var db = require('../models');
