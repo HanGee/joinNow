@@ -21,6 +21,7 @@
           <div class="form-group">
             <label for="githubUrl" class="col-lg-2 control-label">Github</label>
             <div class="col-lg-10">
+              <input type="hidden" class="form-control" id="GithubUrl" name="githubUrl" value="{{ article.githubUrl }}">
               https://github.com/{{ article.githubUrl }}
             </div>
           </div>
