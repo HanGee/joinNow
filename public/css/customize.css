@@ -172,3 +172,19 @@ a {
 .navbar-right li p {
   color: #999;
 }
+
+
+/* Add 20141218 start */
+.breadcrumb a {
+  color: #4183c4;
+}
+
+.alert p {
+  color: #8a6d3b;
+}
+
+ .alert a {
+  color: #4183c4;
+}
+
+/* Add 20141218 end */
