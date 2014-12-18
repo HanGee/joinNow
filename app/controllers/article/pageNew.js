@@ -17,6 +17,10 @@ module.exports = function (req, res, next) {
     });
     
 	var gitRepos = [];
+	gitRepos.push({
+		name: '暫時不設定',
+		value: ''
+	});
     if(req.user.githubToken != undefined) {
 		github.authenticate({
 		    type: "oauth",
