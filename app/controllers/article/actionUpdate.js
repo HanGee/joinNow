@@ -7,6 +7,10 @@ module.exports = function (req, res, next) {
         .findById(req.params.id)
         .exec(function (err, article) {
 
+            if (article.author !== req.user._id){
+                req.flash('error', '更新失敗, 請不要黑黑我，感謝 Big Big, m(_ _)m');
+                return res.redirect('/articles' + req.params.id); 
+            }
             article.title = req.body.title;
             article.content = req.body.content;
             article.githubUrl = req.body.githubUrl;
